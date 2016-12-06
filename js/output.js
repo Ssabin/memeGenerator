@@ -4,40 +4,43 @@
  * Render memes
  */
 
-function renderMemes(){
-    var elMemesGallery__items = document.querySelector('.memes-gallery__items');
-    var strHTML = '';
-    gMemes.forEach(function(meme){
-        strHTML += '<li class="memes-gallery__hexagon meme'+ meme.id +'"><img src="assets/imgs/memes/'+ meme.id +'.jpg" alt="meme" class="img-responsive meme__img" onclick="showGenerator(this.src)"/></li>\n'
+function renderMemes() {
+    var $memesGallery__memes = $('.memes-gallery');
+    gMemes.forEach(function (meme) {
+        var $clone = $('.memes-gallery__meme-template').clone();
+        $clone.attr('class', 'memes-gallery__meme hexagon');
+        $clone.css('background-image' , 'url(../assets/imgs/memes/'+ meme.id +'.jpg)');
+        $clone.on('click', function(){
+            showGenerator(meme.url);
+        });;
+        $clone.toggle();
+        $memesGallery__memes.append($clone);
     });
-    elMemesGallery__items.innerHTML = strHTML;
 }
 
 /**
 onclick- show meme editor
-JQUERY V!@#%@#%
 */
 
-function showGenerator(memeSrc){
-    var elMemeGenerator = document.querySelector('.meme-generator');
-    var elGallery = document.querySelector('.memes-gallery__items');
-    elMemeGenerator.style.display = 'block';
-    elMemeGenerator.querySelector('img').src = memeSrc;
-    elGallery.style.display = ' none';
+function showGenerator(memeUrl) {
+    var $memeGenerator = $('.meme-generator');
+    var $gallery = $('.memes-gallery');
+    $memeGenerator.toggle();
+    $memeGenerator.find('img').attr('src', memeUrl);
+    $gallery.toggle();
 
 }
 
 /**
  * Return button to gallery...
- * better with JQuery
  */
 
-function backToMemeGallery(){
-    var elMemeGenerator = document.querySelector('.meme-generator');
-    var elGallery = document.querySelector('.memes-gallery__items');
-    elMemeGenerator.style.display = 'none';
-    elMemeGenerator.querySelector('img').src = '';
-    elMemeGenerator.querySelector('#topText').value = '';
-    elMemeGenerator.querySelector('#bottomText').value = '';
-    elGallery.style.display = 'flex';
+function backToGallery() {
+    var $memeGenerator = $('.meme-generator');
+    var $gallery = $('.memes-gallery');
+    $memeGenerator.toggle();
+    $memeGenerator.find('img').attr('src', '');
+    $memeGenerator.find('#topText').val('');
+    $memeGenerator.find('#bottomText').val('');
+    $gallery.toggle();
 }
