@@ -470,7 +470,10 @@ template {
 .inner-container {
   width: 100%;
   max-width: var(--inner-container-width);
-  margin: auto; }
+  padding: 0.625em; }
+  @media (min-width: 642px) {
+    .inner-container {
+      margin: auto; } }
 
 header {
   width: 100%;
@@ -498,9 +501,6 @@ html {
   color: var(--main-color);
   font-family: var(--primary-font);
   font-size: 16px; }
-  @media (max-width: 642px) {
-    html {
-      font-size: 14px; } }
 
 a {
   color: currentColor;
@@ -565,6 +565,7 @@ fieldset {
 .hexagon {
   position: relative;
   width: 190px;
+  min-width: 190px;
   height: 110px;
   background-position: center center;
   background-size: cover;
@@ -625,15 +626,26 @@ fieldset {
 
 .about {
   height: auto;
-  background-color: #2eb398;
-  padding: 3.125em 5.625em; }
+  background-color: #2eb398; }
 
 .developer {
-  color: #d7fcf5; }
+  color: #d7fcf5;
+  margin-bottom: 1.25em; }
+  @media (min-width: 642px) {
+    .developer {
+      flex-direction: row; } }
 
-.developer-img {
-  width: 60%;
-  height: 206px; }
+.developer-pic {
+  margin: 4.375em 0; }
+  @media (min-width: 642px) {
+    .developer-pic {
+      margin-right: 0.625em; } }
+
+.developer_1 {
+  background-image: url("../assets/imgs/memes/1.jpg"); }
+
+.developer_2 {
+  background-image: url("../assets/imgs/memes/2.jpg"); }
 
 .developer-name {
   font-size: 1.875rem; }
@@ -647,11 +659,22 @@ fieldset {
 
 .contact {
   height: auto;
-  background-color: #323232;
-  padding: 3.125em 5.625em; }
+  background-color: #323232; }
 
 .contact-info {
   font-size: 0.75em; }
+  @media (min-width: 642px) {
+    .contact-info {
+      flex: 1 1 30%; } }
+
+@media (min-width: 642px) {
+  .contact-form {
+    flex-direction: row; } }
+
+@media (min-width: 642px) {
+  .contact-form__form {
+    flex: 1 0 70%;
+    margin-right: 1.25em; } }
 
 .contact-form__title {
   color: #e0e0e0;
@@ -664,6 +687,7 @@ fieldset {
 .contact-form__field {
   width: 100%;
   margin: 0.3125em 0em;
+  color: white;
   background-color: #454545;
   border: 0px solid black; }
 

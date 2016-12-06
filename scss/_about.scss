@@ -1,15 +1,33 @@
 .about {
     height: auto;
     background-color: #2eb398;
-    padding: em(50px) em(90px);
 }
 .developer {
     color: #d7fcf5;
+    margin-bottom: em(20px);
+    @include from-mobile-only{
+        flex-direction: row;
+    }
 }
 
-.developer-img {
-    width: 60%;
-    height: 206px;
+.developer-pic {
+    margin: em(70px) 0;
+    @include from-mobile-only{
+        margin-right: em(10px);
+    }
+    // width: 100%;
+    // height: 50vw;
+    // @include from-mobile-only{
+    //     height: 206px;
+    // }
+}
+
+.developer_1{
+    background-image: url('../assets/imgs/memes/1.jpg');
+}
+
+.developer_2{
+    background-image: url('../assets/imgs/memes/2.jpg');
 }
 
 .developer-name {

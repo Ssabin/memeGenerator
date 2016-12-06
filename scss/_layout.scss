@@ -8,7 +8,10 @@
 .inner-container{
   width: 100%;
   max-width: var(--inner-container-width);
-  margin: auto;
+  @include from-mobile-only{
+    margin: auto;
+  }
+  padding: em(10px);
 }
 
 

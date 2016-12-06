@@ -11,8 +11,8 @@
 
 /* Breakpoint mixins */
 
-@mixin for-mobile-only {
-  @media (max-width: $mobile-breakpoint) {
+@mixin from-mobile-only {
+  @media (min-width: $mobile-breakpoint) {
     @content;
   }
 }

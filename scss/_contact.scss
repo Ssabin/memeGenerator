@@ -1,11 +1,26 @@
 .contact {
     height: auto;
     background-color: #323232;
-    padding: em(50px) em(90px);
 }
 
 .contact-info {
     font-size: em(12px);
+    @include from-mobile-only{
+        flex: 1 1 30%;
+    }
+}
+
+.contact-form{
+    @include from-mobile-only{
+        flex-direction: row;
+    }
+}
+
+.contact-form__form{
+    @include from-mobile-only{
+        flex: 1 0 70%;
+        margin-right: em(20px);
+    }
 }
 
 .contact-form__title {
@@ -21,6 +36,7 @@
 .contact-form__field {
     width: 100%;
     margin: em(5px) em(0px);
+    color: white;
     background-color: #454545;
     border: 0px solid black;
 }
