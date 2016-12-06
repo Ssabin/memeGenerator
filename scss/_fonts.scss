@@ -15,6 +15,10 @@
   font-weight: 400;
 }
 
-.header {
-  font-size: rem(30px);
+/*----------  Lato Font  ----------*/
+
+@font-face {
+  font-family: 'Lato';
+  src: url('../assets/fonts/Lato2OFL/Lato-Regular.ttf');
+  font-weight: 400;
 }

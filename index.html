@@ -2,60 +2,128 @@
 <html>
 
 <head>
-  <meta charset="UTF-8">
-  <title>Meme Generator</title>
-  <link rel="stylesheet" href="dist/style.css">
+    <meta charset="UTF-8">
+    <title>Meme Generator</title>
+    <link rel="stylesheet" href="dist/style.css">
 </head>
 
-<body>
-    <header>
-        <nav class="main-nav flex justify-center">
-            <ul class="clean-list main-nav__items flex">
-                <li class="main-nav__item">
-                    <a href="#">
+<body onload="init()">
+    <div class="container">
+        <header>
+            <nav class="main-nav flex justify-center full-height">
+                <ul class="clean-list main-nav__items flex align-center full-height">
+                    <li class="main-nav__item">
+                        <a href="#">
                     Memes
                     </a>
-                </li>
-                <li class="main-nav__item">
-                    <a href="#">
+                    </li>
+                    <li class="main-nav__item">
+                        <a href="#">
                     About
                     </a>
-                </li>
-                <li class="main-nav__item">
-                    <a href="#">
-                    <img src="assets/imgs/logo.png" alt="">
-                    </a>
-                </li>
-                <li class="main-nav__item">
-                    <a href="#">
+                    </li>
+                    <li class="main-nav__item">
+                        <a href="#">
+                            <img src="assets/imgs/logo.png" alt="">
+                        </a>
+                    </li>
+                    <li class="main-nav__item">
+                        <a href="#">
                     Gallery
                     </a>
-                </li>
-                <li class="main-nav__item">
-                    <a href="#">
+                    </li>
+                    <li class="main-nav__item">
+                        <a href="#">
                     Contact
                     </a>
-                </li>
-            </ul>
-        </nav>
-    </header>
-    <div class="inner-container">
-        <main>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <main class="memes-gallery">
+            <div class="inner-container flex flex-wrap">
+                <ul class="memes-gallery__items flex space-between flex-wrap clean-list">
+                    <!--<li class="memes-gallery__hexagon">
+                        <img src="assets/imgs/memes/1.jpg" alt="meme" class="img-responsive meme__img" />                        
+                    </li>
+                    <li class="memes-gallery__hexagon">
+                        <img src="assets/imgs/memes/2.jpg" alt="meme" class="img-responsive meme__img" />
+                    </li>
+                    <li class="memes-gallery__hexagon">
+                        <img src="assets/imgs/memes/3.jpg" alt="meme" class="img-responsive meme__img" />
+                    </li>
+                    <li class="memes-gallery__hexagon">
+                        <img src="assets/imgs/memes/4.jpg" alt="meme" class="img-responsive meme__img" />
+                    </li>
+                    <li class="memes-gallery__hexagon">
+                        <img src="assets/imgs/memes/5.jpg" alt="meme" class="img-responsive meme__img" />
+                    </li>
+                    <li class="memes-gallery__hexagon">
+                        <img src="assets/imgs/memes/6.jpg" alt="meme" class="img-responsive meme__img" />
+                    </li>
+                    <li class="memes-gallery__hexagon">
+                        <img src="assets/imgs/memes/7.jpg" alt="meme" class="img-responsive meme__img" />
+                    </li>-->
+                </ul>
 
+                <!-- Meme edit template -->
+                <div class="meme-edit__template" style="display: none;">
+                    <div class="meme-edit flex space-between">
+                        <img src="assets/imgs/memes/7.jpg" alt="meme" class="img-responsive"/>
+                        <form class="meme-edit__form flex flex-col">
+                            <label for="topText">Top Text</label>
+                            <input type="text" id="topText" />
+                            <label for="bottomText">Bottom Text</label>
+                            <input type="text" id="bottomText" />
+                        </form>
+                    </div>
+                </div>
+                
+                <!--Hexogan fail take 1-->
+                <!--<ul class="memes-gallery__items flex space-between flex-wrap clean-list">
+                    <li class="memes-gallery__hexagon meme1">
+                        <div class="hexTop"></div>
+                        <div class="hexBottom"></div>
+                    </li>
+                    <li class="memes-gallery__hexagon meme1">
+                        <div class="hexTop"></div>
+                        <div class="hexBottom"></div>
+                    </li>
+                    <li class="memes-gallery__hexagon meme1">
+                        <div class="hexTop"></div>
+                        <div class="hexBottom"></div>
+                    </li>
+                    <li class="memes-gallery__hexagon meme1">
+                        <div class="hexTop"></div>
+                        <div class="hexBottom"></div>
+                    </li>
+                    <li class="memes-gallery__hexagon meme1">
+                        <div class="hexTop"></div>
+                        <div class="hexBottom"></div>
+                    </li>
+                    <li class="memes-gallery__hexagon meme1">
+                        <div class="hexTop"></div>
+                        <div class="hexBottom"></div>
+                    </li>
+                    <li class="memes-gallery__hexagon meme1">
+                        <div class="hexTop"></div>
+                        <div class="hexBottom"></div>
+                    </li>
+                </ul>-->
+            </div>
         </main>
 
         <div class="about">
-            
+
         </div>
         <div class="contact">
 
         </div>
-    </div>
     <footer>
 
     </footer>
-   
- <script src="js/main.js"></script>
- </body>
+    </div>
+    <script src="js/main.js"></script>
+</body>
 
 </html>

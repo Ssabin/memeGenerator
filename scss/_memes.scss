@@ -1,0 +1,30 @@
+.memes-gallery{
+    padding: em(90px);
+}
+
+.memes-gallery__hexagon{
+    width: 180px;
+    height: 206px;
+    margin-bottom: em(15px);
+}
+
+.meme__img{
+    width: 180px;
+    height: 206px;
+}
+
+/** Memes edit **/
+
+.meme-edit , .meme-edit__template{
+    width: 100%;
+}
+
+.meme-edit img{
+    width: 350px;
+    height: 350px;
+} 
+
+.meme-edit__form{
+    width: 50%;
+    align-items: flex-start;
+}

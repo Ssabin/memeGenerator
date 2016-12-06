@@ -23,6 +23,10 @@
   display: flex;
 }
 
+.flex-col{
+  flex-direction: column;
+}
+
 .align-center {
   align-items: center;
 }

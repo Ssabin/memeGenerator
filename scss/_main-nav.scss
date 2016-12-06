@@ -1,0 +1,22 @@
+.main-nav{
+    background-color: #323232;
+}
+
+// .main-nav__items{
+
+// }
+
+.main-nav__item{
+    &:not(:last-child){
+        margin-right: em(26px);
+    }
+}
+
+.main-nav__item a{
+    color: #efefef;
+    font-size: rem(12px);
+    transition: all 0.5s ease;
+    &:hover{
+        color: #2eac93;
+    }
+}
