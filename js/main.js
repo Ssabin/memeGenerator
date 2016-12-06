@@ -29,11 +29,23 @@ function buildMemes(){
  */
 
 function renderMemes(){
-    debugger;
     var elMemesGallery__items = document.querySelector('.memes-gallery__items');
     var strHTML = '';
     gMemes.forEach(function(meme){
-        strHTML += '<li class="memes-gallery__hexagon meme'+ meme.id +'"><img src="../assets/imgs/memes/'+ meme.id +'.jpg" alt="meme" class="img-responsive meme__img"/></li>\n'
+        strHTML += '<li class="memes-gallery__hexagon meme'+ meme.id +'"><img src="assets/imgs/memes/'+ meme.id +'.jpg" alt="meme" class="img-responsive meme__img" onclick="editMeme(this.src)"/></li>\n'
     });
     elMemesGallery__items.innerHTML = strHTML;
+}
+
+/**
+onclick- show meme editor
+*/
+
+function editMeme(meme){
+    var editTemplate = document.querySelector('.meme-edit__template');
+    var gallery = document.querySelector('.inner-container');
+    editTemplate.style.display = 'block';
+    editTemplate.querySelector('img').src = meme;
+    gallery.style.display = ' none';
+
 }
