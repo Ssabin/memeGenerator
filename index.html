@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meme Generator</title>
     <link rel="stylesheet" href="dist/style.css">
 </head>
@@ -40,7 +41,7 @@
                 </ul>
             </nav>
         </header>
-        <main class="memes-gallery">
+        <main class="memes-gallery" style="display:none">
             <div class="inner-container flex flex-wrap">
                 <ul class="memes-gallery__items flex space-between flex-wrap clean-list">
                     <!--<li class="memes-gallery__hexagon">
@@ -65,23 +66,23 @@
                         <img src="assets/imgs/memes/7.jpg" alt="meme" class="img-responsive meme__img" />
                     </li>-->
                 </ul>
-                      </div>
+            </div>
 
-                <!-- Meme edit template -->
-                <div class="meme-edit__template" style="display: none;">
-                    <div class="meme-edit flex space-between">
-                        <img src="assets/imgs/memes/7.jpg" alt="meme" class="img-responsive"/>
-                        <form class="meme-edit__form flex flex-col">
-                            <label for="topText">Top Text</label>
-                            <input type="text" id="topText" />
-                            <label for="bottomText">Bottom Text</label>
-                            <input type="text" id="bottomText" />
-                        </form>
-                    </div>
+            <!-- Meme edit template -->
+            <div class="meme-edit__template" style="display: none;">
+                <div class="meme-edit flex space-between">
+                    <img src="assets/imgs/memes/7.jpg" alt="meme" class="img-responsive" />
+                    <form class="meme-edit__form flex flex-col">
+                        <label for="topText">Top Text</label>
+                        <input type="text" id="topText" />
+                        <label for="bottomText">Bottom Text</label>
+                        <input type="text" id="bottomText" />
+                    </form>
                 </div>
-                
-                <!--Hexogan fail take 1-->
-                <!--<ul class="memes-gallery__items flex space-between flex-wrap clean-list">
+            </div>
+
+            <!--Hexogan fail take 1-->
+            <!--<ul class="memes-gallery__items flex space-between flex-wrap clean-list">
                     <li class="memes-gallery__hexagon meme1">
                         <div class="hexTop"></div>
                         <div class="hexBottom"></div>
@@ -111,18 +112,49 @@
                         <div class="hexBottom"></div>
                     </li>
                 </ul>-->
-      
+
         </main>
 
-        <div class="about">
-
+        <div class="about flex align-center">
+            <div class="inner-container">
+                <div class="developer flex flex-col">
+                    <div class="developer-pic flex justify-center">
+                        <img src="assets\imgs\memes\2.jpg" class="developer-img img-responsive" />
+                    </div>
+                        <div class="developer-name">
+                        HAIM
+                        </div>
+                    <div class="developer-title">
+                        President
+                    </div>
+                    <div class="developer-bio">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae quas at rem quibusdam facere omnis,
+                        beatae nemo hic dicta commodi consectetur magnam sapiente quisquam, eum enim, vel facilis iure optio.
+                    </div>
+                </div>
+                <div class="developer flex flex-col">
+                    <div class="developer-pic flex justify-center">
+                        <img src="assets\imgs\memes\2.jpg" class="developer-img img-responsive" />
+                    </div>
+                    <div class="developer-name">
+                        MOSHE
+                        </div>
+                    <div class="developer-title">
+                        Vice President
+                    </div>
+                    <div class="developer-bio">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae quas at rem quibusdam facere omnis,
+                        beatae nemo hic dicta commodi consectetur magnam sapiente quisquam, eum enim, vel facilis iure optio.
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="contact">
-
+        <div class="contact flex flex-wrap">
+            <div class="contact-form"></div>
+            <div class="contact-info"></div>
         </div>
-    <footer>
+        <footer>
 
-    </footer>
+        </footer>
     </div>
     <script src="js/main.js"></script>
 </body>

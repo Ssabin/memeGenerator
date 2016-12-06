@@ -46,6 +46,6 @@ function editMeme(meme){
     var gallery = document.querySelector('.inner-container');
     editTemplate.style.display = 'block';
     editTemplate.querySelector('img').src = meme;
-    gallery.style.display = ' none';
+    gallery.style.display = 'none';
 
 }
