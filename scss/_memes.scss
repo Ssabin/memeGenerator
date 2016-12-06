@@ -3,14 +3,16 @@
 }
 
 .memes-gallery__hexagon{
-    width: 180px;
-    height: 206px;
+    // width: 180px; Desktop
+    // height: 206px;
+    width: 100%;
+    height: auto;
     margin-bottom: em(15px);
 }
 
 .meme__img{
-    width: 180px;
-    height: 206px;
+    // width: 180px; //desktop
+    // height: 206px;
 }
 
 /** Memes edit **/
@@ -19,12 +21,14 @@
     width: 100%;
 }
 
-.meme-edit img{
-    width: 350px;
-    height: 350px;
+.meme-generator img{
+    // width: 350px; //desktop
+    // height: 350px;
+    width: 100%;
+    height: auto;
 } 
 
 .meme-edit__form{
-    width: 50%;
-    align-items: flex-start;
+    width: 100%;
+    align-items: center;
 }
