@@ -470,7 +470,8 @@ template {
 .inner-container {
   width: 100%;
   max-width: var(--inner-container-width);
-  margin: auto; }
+  margin: auto;
+  padding: 0.625em; }
 
 header {
   width: 100%;
@@ -498,9 +499,6 @@ html {
   color: var(--main-color);
   font-family: var(--primary-font);
   font-size: 16px; }
-  @media (max-width: 642px) {
-    html {
-      font-size: 14px; } }
 
 a {
   color: currentColor;
@@ -557,6 +555,13 @@ fieldset {
 .meme-generator .meme-generator__meme {
   width: 100%;
   height: auto; }
+
+@media (min-width: 642px) {
+  .memes-gallery {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between; } }
 
 .meme-edit__form {
   width: 100%;
@@ -625,8 +630,7 @@ fieldset {
 
 .about {
   height: auto;
-  background-color: #2eb398;
-  padding: 3.125em 5.625em; }
+  background-color: #2eb398; }
 
 .developer {
   color: #d7fcf5; }
@@ -647,8 +651,7 @@ fieldset {
 
 .contact {
   height: auto;
-  background-color: #323232;
-  padding: 3.125em 5.625em; }
+  background-color: #323232; }
 
 .contact-info {
   font-size: 0.75em; }

@@ -17,6 +17,16 @@
     height: auto;
 } 
 
+.memes-gallery {
+   @include from-mobile-only {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    
+  }
+}
+
 .meme-edit__form{
     width: 100%;
     align-items: center;
