@@ -1,0 +1,43 @@
+/*----------  Containers  ----------*/
+
+.container {
+  width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 1em;
+}
+
+.inner-container{
+  width: 100%;
+  max-width: var(--inner-container-width);
+}
+
+
+header{
+  background: blue;
+  width: 100%;
+  height: 20px;
+}
+
+main{
+  background: purple;
+  width: 100%;
+  height: 20px;
+}
+
+.about{
+  background: yellow;
+  width: 100%;
+  height: 20px; 
+}
+
+.contact{
+  background: red;
+  width: 100%;
+  height: 20px;
+}
+
+footer{
+  background: grey;
+  width: 100%;
+  height: 20px;
+}
