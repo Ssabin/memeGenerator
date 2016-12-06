@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meme Generator</title>
     <link rel="stylesheet" href="dist/style.css">
 </head>
@@ -65,21 +66,19 @@
                         <img src="assets/imgs/memes/7.jpg" alt="meme" class="img-responsive meme__img" />
                     </li>-->
                 </ul>
-                      </div>
 
-                <!-- Meme edit template -->
-                <div class="meme-edit__template" style="display: none;">
-                    <div class="meme-edit flex space-between">
-                        <img src="assets/imgs/memes/7.jpg" alt="meme" class="img-responsive"/>
-                        <form class="meme-edit__form flex flex-col">
-                            <label for="topText">Top Text</label>
-                            <input type="text" id="topText" />
-                            <label for="bottomText">Bottom Text</label>
-                            <input type="text" id="bottomText" />
-                        </form>
-                    </div>
+
+                <!-- Meme Generator -->
+                <div class="meme-generator flex space-between" style="display: none;">
+                    <button onclick="backToMemeGallery()">Go back</button>
+                    <img src="" alt="meme" class="img-responsive" />
+                    <form class="meme-edit__form flex flex-col">
+                        <label for="topText">Top Text</label>
+                        <input type="text" id="topText" />
+                        <label for="bottomText">Bottom Text</label>
+                        <input type="text" id="bottomText" />
+                    </form>
                 </div>
-                
                 <!--Hexogan fail take 1-->
                 <!--<ul class="memes-gallery__items flex space-between flex-wrap clean-list">
                     <li class="memes-gallery__hexagon meme1">
@@ -111,7 +110,7 @@
                         <div class="hexBottom"></div>
                     </li>
                 </ul>-->
-      
+            </div>
         </main>
 
         <div class="about">
@@ -120,10 +119,13 @@
         <div class="contact">
 
         </div>
-    <footer>
+        <footer>
 
-    </footer>
+        </footer>
     </div>
+    <script src="js/utils.js"></script>
+    <script src="js/model.js"></script>
+    <script src="js/output.js"></script>
     <script src="js/main.js"></script>
 </body>
 
