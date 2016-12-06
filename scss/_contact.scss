@@ -1,4 +1,44 @@
 .contact {
-    height: 560px;
+    height: auto;
     background-color: #323232;
+    padding: em(50px) em(90px);
+}
+
+.contact-info {
+    font-size: em(12px);
+}
+
+.contact-form__title {
+    color: #e0e0e0;
+    font-size: rem(30px);
+}
+
+.contact-form__subtitle {
+    color: #bebebe;
+    font-size: rem(18px);
+}
+
+.contact-form__field {
+    width: 100%;
+    margin: em(5px) em(0px);
+    background-color: #454545;
+    border: 0px solid black;
+}
+
+    ::-webkit-input-placeholder {
+    color: #bebebe;
+    }
+
+.contact-form__button {
+    width: em(90px);
+    height: em(37px);
+    background-color: #2eb398;
+    color: white;
+    font-size: rem(12px);
+    border: none;
+}
+
+.contact-form__send {
+    justify-content: flex-end;
+    margin-bottom: em(10px);
 }
