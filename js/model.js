@@ -2,41 +2,49 @@
 var gMemes=[
     {
         id: 1,
-        url: '../assets/imgs/memes/1.jpg',
+        url: 'assets/imgs/memes/1.jpg',
         keywords: ['happy' , 'funny']
     },
     {
         id: 2,
-        url: '../assets/imgs/memes/2.jpg',
+        url: 'assets/imgs/memes/2.jpg',
         keywords: ['inspiring' , 'smart']
     },
     {
         id: 3,
-        url: '../assets/imgs/memes/3.jpg',
+        url: 'assets/imgs/memes/3.jpg',
         keywords: ['inspiring' , 'funny']
     },
     {
         id: 4,
-        url: '../assets/imgs/memes/4.jpg',
+        url: 'assets/imgs/memes/4.jpg',
         keywords: ['happy' , 'cheering']
     },
     {
         id: 5,
-        url: '../assets/imgs/memes/5.jpg',
+        url: 'assets/imgs/memes/5.jpg',
         keywords: ['inspiring' , 'sad']
     },
     {
         id: 6,
-        url: '../assets/imgs/memes/6.jpg',
+        url: 'assets/imgs/memes/6.jpg',
         keywords: ['dramatic']
     },
     {
         id: 7,
-        url: '../assets/imgs/memes/7.jpg',
+        url: 'assets/imgs/memes/7.jpg',
         keywords: ['stupid' , 'history']
     }
 ];
 var gState; 
+
+function resetState(){
+    gState = {
+        currMemeUrl: '',
+        currTopText: '',
+        currBottomText: ''
+    };
+}
 
 
 // ,

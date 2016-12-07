@@ -54,10 +54,10 @@
     flex-direction: column;
 }
 
-.developer-socialmedia__icons{
-    
-    &:nth-child(1){
-        align-self: flex-end;
+.developer-socialmedia__icons{ 
+    align-self: flex-end;
+    &:last-of-type{
+        margin-right: em(10px);
     }
     .fa{
         font-size: rem(30px);

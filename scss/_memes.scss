@@ -1,21 +1,10 @@
-.memes-gallery__container{
-    padding-top: em(90px);
-}
+// .memes-gallery__container{
+//     padding-top: em(90px);
+// }
 
 .memes-gallery__meme{
     margin-bottom: em(150px);
 }
-
-/** Memes edit **/
-
-.meme-edit , .meme-edit__template{
-    width: 100%;
-}
-
-.meme-generator .meme-generator__meme{
-    width: 100%;
-    height: auto;
-} 
 
 .memes-gallery {
     border: 2px solid #e4e9eb;
@@ -28,13 +17,57 @@
   }
 }
 
+/** Memes edit **/
+
+.meme-edit , .meme-edit__template{
+    width: 100%;
+}
+
+.meme-generator{
+    width: 100%;
+    max-width: 100%;
+}
+
+.meme-generator__container{
+    @include from-mobile-only{
+        flex-direction: row;
+    }
+}
+
+.meme-generator .meme-generator__meme{
+    width: 100%;
+    height: auto;
+} 
+
 .meme-edit__form{
     width: 100%;
     align-items: center;
 }
 
+.meme-generator__canvas{
+    // border: 1px solid black;
+    max-width: 100%;
+}
 
+.topText , .bottomText{
+    width: 100%;
+}
+
+.top-text__generator-features > * , .bottom-text__generator-features > *{
+    display: flex;
+    margin-top: em(10px);
+    &:not(:last-child){
+        margin-right: em(10px);
+    }
+}
+
+.meme-edit__form > *{
+    &:not(:last-child){
+        margin-bottom: em(10px);
+    }
+}
+
+// Memes search
 .search-meme__container{
     margin-bottom: em(60px);
 }
-
