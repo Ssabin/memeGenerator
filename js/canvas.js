@@ -12,18 +12,44 @@ function initCanvas() {
     gElBottomTextBox = document.querySelector('#bottomText');
     drawOnCanvas();
 }
-
+/**
+ * This function triggers 3 functions which will draw the img and texts on the canvas
+ */
 function drawOnCanvas() {
+    drawImgOnCanvas();
+
+    setTimeout(function () {
+        drawTopTextOnCanvas();
+        drawBottomTextOnCanvas();
+    }, 100);
+}
+
+/**
+ * Draw img on canvas
+ */
+function drawImgOnCanvas() {
+    ctx.clearRect(0, 0, 568, 360);
     var img = new Image();
     img.src = gState.currMemeUrl;
     img.onload = function () {
         ctx.drawImage(img, 0, 0, 568, 360);
-        ctx.font = "60px 'Segoe UI'";
     };
-    // $('#enter-text').click(function(){
-    //     ctx.fillText($('#topText').val(), 200, 50);
-    //     ctx.fillText($('#bottomText').val(), 200, 320);
-    //     });
+}
+
+/**
+ * Draws top text on function 
+ */
+function drawTopTextOnCanvas() {
+    ctx.font = gState.currTopFontSize + 'px "Lato"';
+    ctx.fillText(gState.currTopText, 200, 50);
+}
+
+/**
+ * Draws bottom text on function 
+ */
+function drawBottomTextOnCanvas() {
+    ctx.font = gState.currBottomFontSize + 'px "Lato"';
+    ctx.fillText(gState.currBottomText, 200, 320);
 }
 
 /**
@@ -34,15 +60,17 @@ function writeTextOnMeme() {
     gState.currTopText = gElTopTextBox ? gElTopTextBox.value : '';
     ctx.clearRect(0, 0, 568, 360);
     drawOnCanvas();
-    setTimeout(function () {
-        fillText();
-    }, 100);
 }
 
 /**
- * This function fills the img with the text in the inputs
+ * This function is triggred when user incease or decrease font size
  */
-function fillText() {
-    ctx.fillText(gState.currTopText, 200, 50);
-    ctx.fillText(gState.currBottomText, 200, 320);
+
+function changeFontSize(fontSizeValue, textLocation) {
+    if (textLocation === 'top') {
+        gState.currTopFontSize += fontSizeValue;
+    } else {
+        gState.currBottomFontSize += fontSizeValue;
+    }
+    drawOnCanvas();
 }
