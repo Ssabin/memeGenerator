@@ -26,9 +26,8 @@ function showGenerator(memeUrl) {
     var $memeGenerator = $('.meme-generator');
     var $gallery = $('.memes-gallery');
     $memeGenerator.toggle();
-    $memeGenerator.find('img').attr('src', memeUrl);
-    $gallery.toggle();
-
+    $gallery.slideToggle();
+    initCanvas(memeUrl);
 }
 
 /**
