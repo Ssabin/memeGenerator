@@ -2938,14 +2938,6 @@ fieldset {
 .memes-gallery__meme {
   margin-bottom: 9.375em; }
 
-/** Memes edit **/
-.meme-edit, .meme-edit__template {
-  width: 100%; }
-
-.meme-generator .meme-generator__meme {
-  width: 100%;
-  height: auto; }
-
 .memes-gallery {
   border: 2px solid #e4e9eb; }
   @media (min-width: 642px) {
@@ -2955,9 +2947,40 @@ fieldset {
       flex-wrap: wrap;
       justify-content: space-between; } }
 
+/** Memes edit **/
+.meme-edit, .meme-edit__template {
+  width: 100%; }
+
+.meme-generator {
+  width: 100%;
+  max-width: 100%; }
+
+@media (min-width: 642px) {
+  .meme-generator__container {
+    flex-direction: row; } }
+
+.meme-generator .meme-generator__meme {
+  width: 100%;
+  height: auto; }
+
 .meme-edit__form {
   width: 100%;
   align-items: center; }
+
+.meme-generator__canvas {
+  max-width: 100%; }
+
+.topText, .bottomText {
+  width: 100%; }
+
+.top-text__generator-features > *, .bottom-text__generator-features > * {
+  display: flex;
+  margin-top: 0.625em; }
+  .top-text__generator-features > *:not(:last-child), .bottom-text__generator-features > *:not(:last-child) {
+    margin-right: 0.625em; }
+
+.meme-edit__form > *:not(:last-child) {
+  margin-bottom: 0.625em; }
 
 .search-meme__container {
   margin-bottom: 3.75em; }
@@ -3012,11 +3035,12 @@ fieldset {
   display: flex;
   flex-direction: column; }
 
-.developer-socialmedia__icons:nth-child(1) {
+.developer-socialmedia__icons {
   align-self: flex-end; }
-
-.developer-socialmedia__icons .fa {
-  font-size: 1.875rem; }
+  .developer-socialmedia__icons:last-of-type {
+    margin-right: 0.625em; }
+  .developer-socialmedia__icons .fa {
+    font-size: 1.875rem; }
 
 .developer-socialmedia__icons .fa-facebook-square {
   color: #35609f; }

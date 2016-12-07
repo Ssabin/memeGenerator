@@ -71,14 +71,85 @@
                 <!-- Meme Generator -->
                 <div class="meme-generator flex-col flex space-between" style="display: none;">
                     <button onclick="backToGallery()">Go back</button>
-                    <canvas width="568" height="360" id="canvas">Sorry, no canvas available</canvas>
-                    <form class="meme-edit__form flex flex-col">
-                        <label for="topText">Top Text</label>
-                        <input type="text" id="topText" />
-                        <label for="bottomText">Bottom Text</label>
-                        <input type="text" id="bottomText" />
-                        <input type="submit" id="enter-text" onclick="return false;">
-                    </form>
+                    <div class="meme-generator__container flex flex-col">
+                        <canvas id="canvas"  width="568" height="360" class="meme-generator__canvas">Sorry, no canvas available</canvas>
+                        <form class="meme-edit__form flex flex-col">
+
+                            <div class="top-text__generator flex flex-col align-center">
+                                <label for="topText">Top Text</label>
+                                <input type="text" class="topText" id="topText" oninput="writeTextOnMeme()" />
+
+                                <div class="top-text__generator-features flex">
+                                    <div class="top-text__generator-aligns">
+                                        <button class="top-text__align-right">
+                                        <i class="fa fa-align-right" aria-hidden="true"></i>
+                                    </button>
+                                        <button class="top-text__align-justify">
+                                        <i class="fa fa-align-center" aria-hidden="true"></i>
+                                    </button>
+                                        <button class="top-text__align-left">
+                                        <i class="fa fa-align-left" aria-hidden="true"></i>
+                                    </button>
+                                    </div>
+
+                                    <div class="top-text__generator-font-sizes">
+                                        <button class="top-text__increase-font-size">
+                                        <i class="fa fa-plus" aria-hidden="true"></i>
+                                    </button>
+                                        <button class="top-text__decrease-font-size">
+                                        <i class="fa fa-minus" aria-hidden="true"></i>
+                                    </button>
+                                    </div>
+
+                                    <div class="top-text__generator-font-effect">
+                                        <button class="top-text__color">
+                                        <i class="fa fa-tint" aria-hidden="true"></i>
+                                    </button>
+                                        <button class="top-text__shadow">
+                                        <i class="fa fa-adjust" aria-hidden="true"></i>
+                                    </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="bottom-text__generator flex flex-col align-center">
+                                <label for="bottomText">Bottom Text</label>
+                                <input type="text" class="bottomText" id="bottomText" oninput="writeTextOnMeme()" />
+                                <div class="bottom-text__generator-features flex">
+                                    <div class="bottom-text__generator-aligns">
+                                        <button class="bottom-text__align-right">
+                                        <i class="fa fa-align-right" aria-hidden="true"></i>
+                                    </button>
+                                        <button class="bottom-text__align-justify">
+                                        <i class="fa fa-align-center" aria-hidden="true"></i>
+                                    </button>
+                                        <button class="bottom-text__align-left">
+                                        <i class="fa fa-align-left" aria-hidden="true"></i>
+                                    </button>
+                                    </div>
+
+                                    <div class="bottom-text__generator-font-sizes">
+                                        <button class="top-text__increase-font-size">
+                                        <i class="fa fa-plus" aria-hidden="true"></i>
+                                    </button>
+                                        <button class="bottom-text__decrease-font-size">
+                                        <i class="fa fa-minus" aria-hidden="true"></i>
+                                    </button>
+                                    </div>
+
+                                    <div class="bottom-text__generator-font-effect">
+                                        <button class="top-text__color">
+                                        <i class="fa fa-tint" aria-hidden="true"></i>
+                                    </button>
+                                        <button class="bottom-text__shadow">
+                                        <i class="fa fa-adjust" aria-hidden="true"></i>
+                                    </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <input type="submit" id="enter-text" onclick="return false;">
+                        </form>
+                    </div>
                 </div>
             </div>
         </main>

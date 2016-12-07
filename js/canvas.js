@@ -2,19 +2,20 @@
 
 var canvas;
 var ctx;
+var gElTopTextBox; //Top text input element
+var gElBottomTextBox; //Bottom text input element
 
 function initCanvas() {
     canvas = document.querySelector('#canvas');
     ctx = canvas.getContext('2d');
+    gElTopTextBox = document.querySelector('#topText');
+    gElBottomTextBox = document.querySelector('#bottomText');
     drawOnCanvas();
 }
 
 function drawOnCanvas() {
     var img = new Image();
     img.src = gState.currMemeUrl;
-    // var $topText = $('#topText').val();
-    // var $bottomText = $('#bottomText').val();
-
     img.onload = function () {
         ctx.drawImage(img, 0, 0, 568, 360);
         ctx.font = "60px 'Segoe UI'";
@@ -25,20 +26,23 @@ function drawOnCanvas() {
     //     });
 }
 
-var topTextBox = document.querySelector('#topText');
-topTextBox.onkeydown = function() {
-        ctx.clearRect(0, 0, 568, 360);
-        drawOnCanvas();
-        setTimeout(function() {
-        ctx.fillText(topTextBox.value, 200, 50);    
-        }, 100);
-    }   
+/**
+ * This function is called whenever input on Generator form is changes
+ */
+function writeTextOnMeme() {
+    gState.currBottomText = gElBottomTextBox ? gElBottomTextBox.value : '';
+    gState.currTopText = gElTopTextBox ? gElTopTextBox.value : '';
+    ctx.clearRect(0, 0, 568, 360);
+    drawOnCanvas();
+    setTimeout(function () {
+        fillText();
+    }, 100);
+}
 
-var bottomTextBox = document.querySelector('#bottomText');
-bottomTextBox.onkeydown = function() {
-        ctx.clearRect(0, 0, 568, 360);
-        drawOnCanvas();
-        setTimeout(function() {
-        ctx.fillText(bottomTextBox.value, 200, 320);    
-        }, 100);
-    }   
+/**
+ * This function fills the img with the text in the inputs
+ */
+function fillText() {
+    ctx.fillText(gState.currTopText, 200, 50);
+    ctx.fillText(gState.currBottomText, 200, 320);
+}

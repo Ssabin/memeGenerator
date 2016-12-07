@@ -4,11 +4,9 @@ const MEMES_IMGS = 7;
 function init(){
     // buildMemes();
     renderMemes(gMemes);
-    gState = {
-        currMemeUrl: ''
-    };
     var gKeyWordsPopularity = JSON.parse(localStorage.getItem('keyWordsPopularity'));
     if (!gKeyWordsPopularity) saveToLocalStorageFirstTime(); 
+    resetState();
 }
 
 function searchKeyWord(keyWord){

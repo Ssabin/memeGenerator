@@ -43,5 +43,6 @@ function backToGallery() {
     $memeGenerator.find('img').attr('src', '');
     $memeGenerator.find('#topText').val('');
     $memeGenerator.find('#bottomText').val('');
+    resetState();
     $gallery.toggle();
 }
