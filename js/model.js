@@ -36,6 +36,7 @@ var gMemes=[
         keywords: ['stupid' , 'history']
     }
 ];
+var gState; 
 
 
 // ,
@@ -54,6 +55,7 @@ var gMemes=[
 //         url: '../assets/imgs/memes/10.jpg',
 //         keywords: ['history' , 'romans']
 //     },
+
 
 /**
  * Builds model 
