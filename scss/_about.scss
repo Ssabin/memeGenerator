@@ -48,3 +48,28 @@
 .developer-bio {
     margin-bottom: em(20px);
 }
+
+.developer-story{
+    display: flex;
+    flex-direction: column;
+}
+
+.developer-socialmedia__icons{
+    align-self: flex-end;
+    .fa{
+        font-size: rem(30px);
+    }  
+}
+
+.developer-socialmedia__icons .fa-facebook-square{
+    color: #35609f;
+}
+.developer-socialmedia__icons .fa-linkedin-square{
+    color: #096c9b;
+}
+.developer-socialmedia__icons .fa-twitter-square{
+    color: white;
+}
+.developer-socialmedia__icons .fa-phone-square{
+    color: #dc5443;
+}
