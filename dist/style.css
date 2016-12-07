@@ -2935,9 +2935,6 @@ fieldset {
   .main-nav__item a:hover {
     color: #2eac93; }
 
-.memes-gallery__container {
-  padding-top: 5.625em; }
-
 .memes-gallery__meme {
   margin-bottom: 9.375em; }
 
@@ -2964,6 +2961,13 @@ fieldset {
 
 .search-meme__container {
   margin-bottom: 3.75em; }
+  @media (min-width: 642px) {
+    .search-meme__container {
+      flex-direction: row;
+      align-items: center; } }
+
+.search-keywords {
+  margin-left: 3.125em; }
 
 .about {
   height: auto;

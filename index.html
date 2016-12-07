@@ -43,17 +43,31 @@
         </header>
         <main class="memes-gallery__container flex flex-col align-center">
             <div class="search-meme__container flex flex-col">
-                <h3>Search for meme by keyword</h3>
-                <input type="text" class="search-meme__input" oninput="searchKeyWord(this.value)" />
+                <div class="search-meme">
+                    <h3>Search for meme by keyword</h3>
+                    <input type="text" class="search-meme__input" oninput="searchKeyWord(this.value)" />
+                </div>
+                <div class="search-keywords align-center">
+                    <div onclick="selectKeyWord(this.innerText)" class="search-keywords__keyword">Happy</div>
+                    <div onclick="selectKeyWord(this.innerText)" class="search-keywords__keyword">Funny</div>
+                    <div onclick="selectKeyWord(this.innerText)" class="search-keywords__keyword">Inspiring</div>
+                    <div onclick="selectKeyWord(this.innerText)" class="search-keywords__keyword">Smart</div>
+                    <div onclick="selectKeyWord(this.innerText)" class="search-keywords__keyword">Cheering</div>
+                    <div onclick="selectKeyWord(this.innerText)" class="search-keywords__keyword">Sad</div>
+                    <div onclick="selectKeyWord(this.innerText)" class="search-keywords__keyword">Dramatic</div>
+                    <div onclick="selectKeyWord(this.innerText)" class="search-keywords__keyword">Stupid</div>
+                    <div onclick="selectKeyWord(this.innerText)" class="search-keywords__keyword">History</div>
+                </div>
             </div>
+
             <div class="inner-container flex flex-col flex-wrap align-center">
                 <div class="memes-gallery">
                 </div>
                 <!--Hexogan template-->
-                    <div class="memes-gallery__meme-template" style="display: none;">
-                        <div class="face1"></div>
-                        <div class="face2"></div>
-                    </div>
+                <div class="memes-gallery__meme-template" style="display: none;">
+                    <div class="face1"></div>
+                    <div class="face2"></div>
+                </div>
                 <!-- Meme Generator -->
                 <div class="meme-generator flex-col flex space-between" style="display: none;">
                     <button onclick="backToGallery()">Go back</button>

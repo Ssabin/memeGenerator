@@ -1,29 +1,29 @@
 'use strict';
-var gMemes=[
+var gMemes = [
     {
         id: 1,
         url: '../assets/imgs/memes/1.jpg',
-        keywords: ['happy' , 'funny']
+        keywords: ['happy', 'funny']
     },
     {
         id: 2,
         url: '../assets/imgs/memes/2.jpg',
-        keywords: ['inspiring' , 'smart']
+        keywords: ['inspiring', 'smart']
     },
     {
         id: 3,
         url: '../assets/imgs/memes/3.jpg',
-        keywords: ['inspiring' , 'funny']
+        keywords: ['inspiring', 'funny']
     },
     {
         id: 4,
         url: '../assets/imgs/memes/4.jpg',
-        keywords: ['happy' , 'cheering']
+        keywords: ['happy', 'cheering']
     },
     {
         id: 5,
         url: '../assets/imgs/memes/5.jpg',
-        keywords: ['inspiring' , 'sad']
+        keywords: ['inspiring', 'sad']
     },
     {
         id: 6,
@@ -33,11 +33,46 @@ var gMemes=[
     {
         id: 7,
         url: '../assets/imgs/memes/7.jpg',
-        keywords: ['stupid' , 'history']
+        keywords: ['stupid', 'history']
     }
 ];
-var gState; 
+var gState;
+var gKeyWordsPopularity;
 
+// var keyWordsPopularity = {
+//     'happy': 0,
+//     'funny': 0,
+//     'inspiring': 0,
+//     'smart': 0,
+//     'cheering': 0,
+//     'sad': 0,
+//     'dramatic': 0,
+//     'stupid': 0,
+//     'history': 0
+// }
+
+function saveToLocalStorageFirstTime() {
+    gKeyWordsPopularity = {
+        'happy': 0,
+        'funny': 0,
+        'inspiring': 0,
+        'smart': 0,
+        'cheering': 0,
+        'sad': 0,
+        'dramatic': 0,
+        'stupid': 0,
+        'history': 0
+    }
+    var keyWordsString = JSON.stringify(gKeyWordsPopularity);
+    localStorage.setItem('keyWordsPopularity', keyWordsString);
+}
+
+function saveToLocalStorage(keyWord) {
+    // var keyWords = JSON.parse(localStorage.getItem('keyWordsPopularity'));
+    if (gKeyWordsPopularity[keyWord.toLowerCase()] >= 0) gKeyWordsPopularity[keyWord.toLowerCase()]++;
+    var keyWordsString = JSON.stringify(gKeyWordsPopularity);
+    localStorage.setItem('keyWordsPopularity', keyWordsString);
+}
 
 // ,
 //     {
