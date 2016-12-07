@@ -66,7 +66,15 @@ function resetState(){
     gState = {
         currMemeUrl: '',
         currTopText: '',
-        currBottomText: ''
+        currBottomText: '',
+        currTopTextAlignment: 'center',
+        currBottomTextAlignment: 'center',
+        currTopFontSize: 60,
+        currBottomFontSize: 60,
+        currTopColor: 'white',
+        currBottomColor: 'white',
+        currTopTextShadow: false,
+        currBottomTextShadow: false
     };
 }
 

@@ -4,7 +4,7 @@ const MEMES_IMGS = 7;
 function init(){
     // buildMemes();
     renderMemes(gMemes);
-    var gKeyWordsPopularity = JSON.parse(localStorage.getItem('keyWordsPopularity'));
+    gKeyWordsPopularity = JSON.parse(localStorage.getItem('keyWordsPopularity'));
     if (!gKeyWordsPopularity) saveToLocalStorageFirstTime(); 
     resetState();
 }
