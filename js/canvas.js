@@ -17,7 +17,6 @@ function initCanvas() {
  */
 function drawOnCanvas() {
     drawImgOnCanvas();
-
     setTimeout(function () {
         drawTopTextOnCanvas();
         drawBottomTextOnCanvas();
@@ -40,7 +39,19 @@ function drawImgOnCanvas() {
  * Draws top text on function 
  */
 function drawTopTextOnCanvas() {
+    //font size    
     ctx.font = gState.currTopFontSize + 'px "Lato"';
+    //font color    
+    ctx.fillStyle = gState.currTopColor;
+    //font text shadow    
+    if (gState.currTopTextShadow) {
+        ctx.shadowColor = 'black';
+        ctx.shadowOffsetX = 0;
+        ctx.shadowOffsetY = 0;
+        ctx.shadowBlur = 10;
+    }else{
+        ctx.shadowBlur = 0;        
+    }
     ctx.fillText(gState.currTopText, 200, 50);
 }
 
@@ -48,7 +59,19 @@ function drawTopTextOnCanvas() {
  * Draws bottom text on function 
  */
 function drawBottomTextOnCanvas() {
+    //font size
     ctx.font = gState.currBottomFontSize + 'px "Lato"';
+    //font color
+    ctx.fillStyle = gState.currBottomColor;
+    //font text shadow
+    if (gState.currBottomTextShadow) {
+        ctx.shadowColor = 'black';
+        ctx.shadowOffsetX = 0;
+        ctx.shadowOffsetY = 0;
+        ctx.shadowBlur = 10;
+    }else{
+        ctx.shadowBlur = 0;        
+    }
     ctx.fillText(gState.currBottomText, 200, 320);
 }
 
@@ -74,3 +97,27 @@ function changeFontSize(fontSizeValue, textLocation) {
     }
     drawOnCanvas();
 }
+
+function changeFontColor(fontColorHex, textLocation) {
+    if (textLocation === 'top') {
+        gState.currTopColor = fontColorHex;
+    } else {
+        gState.currBottomColor = fontColorHex;
+    }
+    drawOnCanvas();
+}
+
+function changeTextShadow(textLocation) {
+    if (textLocation === 'top') {
+        gState.currTopTextShadow =  !gState.currTopTextShadow;
+    } else {
+        gState.currBottomTextShadow = !gState.currTopTextShadow;
+    }
+    drawOnCanvas();
+}
+
+// function changeText(textLocation , value , action){
+//     switch('action'){
+//         case 'changeFontSize': 
+//     }
+// }

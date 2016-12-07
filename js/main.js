@@ -1,6 +1,9 @@
 'use strict';
 const MEMES_IMGS = 7;
 
+/**
+ * This function will be called when body loads
+ */
 function init(){
     // buildMemes();
     renderMemes(gMemes);

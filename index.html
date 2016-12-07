@@ -74,7 +74,7 @@
                     <button onclick="backToGallery()" class="meme-generator__back">Go Back</button>
                     <div class="meme-generator__container flex flex-col">
                         <canvas id="canvas"  width="568" height="360" class="meme-generator__canvas">Sorry, no canvas available</canvas>
-                        <form class="meme-edit__form flex flex-col">
+                        <div class="meme-edit__form flex flex-col">
 
                             <div class="top-text__generator flex flex-col align-center">
                                 <label for="topText">Top Text</label>
@@ -103,10 +103,10 @@
                                     </div>
 
                                     <div class="top-text__generator-font-effect">
-                                        <button class="top-text__color">
-                                        <i class="fa fa-tint" aria-hidden="true"></i>
-                                    </button>
-                                        <button class="top-text__shadow">
+                                        <input type="color" class="top-text__color" oninput="changeFontColor(this.value , 'top')">
+                                        <!--<i class="fa fa-tint" aria-hidden="true"></i>-->
+                                    </input>
+                                        <button class="top-text__shadow" onclick="changeTextShadow('top')">
                                         <i class="fa fa-adjust" aria-hidden="true"></i>
                                     </button>
                                     </div>
@@ -130,7 +130,7 @@
                                     </div>
 
                                     <div class="bottom-text__generator-font-sizes">
-                                        <button class="top-text__increase-font-size" onclick="changeFontSize(5 , 'bottom'); return false;">
+                                        <button class="bottom-text__increase-font-size" onclick="changeFontSize(5 , 'bottom'); return false;">
                                         <i class="fa fa-plus" aria-hidden="true"></i>
                                     </button>
                                         <button class="bottom-text__decrease-font-size" onclick="changeFontSize(-5 , 'bottom'); return false;">
@@ -139,17 +139,17 @@
                                     </div>
 
                                     <div class="bottom-text__generator-font-effect">
-                                        <button class="top-text__color">
-                                        <i class="fa fa-tint" aria-hidden="true"></i>
-                                    </button>
-                                        <button class="bottom-text__shadow">
+                                        <input type="color" class="bottom-text__color" oninput="changeFontColor(this.value , 'bottom')">
+                                        <!--<i class="fa fa-tint" aria-hidden="true"></i>-->
+                                    </input>
+                                        <button class="bottom-text__shadow" onclick="changeTextShadow('bottom')">
                                         <i class="fa fa-adjust" aria-hidden="true"></i>
                                     </button>
                                     </div>
                                 </div>
                             </div>
                             <input type="submit" id="enter-text" onclick="return false;">
-                        </form>
+                        </div>
                     </div>
                 </div>
             </div>
