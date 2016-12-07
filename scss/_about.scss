@@ -55,7 +55,10 @@
 }
 
 .developer-socialmedia__icons{
-    align-self: flex-end;
+    
+    &:nth-child(1){
+        align-self: flex-end;
+    }
     .fa{
         font-size: rem(30px);
     }  

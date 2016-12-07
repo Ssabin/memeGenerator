@@ -607,31 +607,8 @@ template {
 .fa-envelope-o:before {
   content: ""; }
 
-/** Hexagon **/
-.hexagon {
-  position: relative;
-  width: 190px;
-  min-width: 190px;
-  height: 110px;
-  background-position: center center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  z-index: 1;
-  /* Text styling */
-  line-height: 110px;
-  text-align: center;
-  font-family: sans-serif;
-  font-size: 15px;
-  font-weight: bold;
-  letter-spacing: 6px;
-  color: #fff;
-  color: rgba(255, 255, 255, 0.5);
-  cursor: pointer;
-  transition: color 500ms ease, text-shadow 500ms ease; }
-
 .fa-heart:before {
   content: ""; }
-
 
 .fa-star:before {
   content: ""; }
@@ -2804,7 +2781,7 @@ template {
 .full-height {
   height: 100%; }
 
-/** Hexogan **/
+/** Hexagon **/
 .hexagon {
   position: relative;
   width: 190px;
@@ -2985,6 +2962,9 @@ fieldset {
   width: 100%;
   align-items: center; }
 
+.search-meme__container {
+  margin-bottom: 3.75em; }
+
 .about {
   height: auto;
   background-color: #2eb398; }
@@ -3028,10 +3008,11 @@ fieldset {
   display: flex;
   flex-direction: column; }
 
-.developer-socialmedia__icons {
+.developer-socialmedia__icons:nth-child(1) {
   align-self: flex-end; }
-  .developer-socialmedia__icons .fa {
-    font-size: 1.875rem; }
+
+.developer-socialmedia__icons .fa {
+  font-size: 1.875rem; }
 
 .developer-socialmedia__icons .fa-facebook-square {
   color: #35609f; }

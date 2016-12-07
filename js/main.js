@@ -2,6 +2,16 @@
 const MEMES_IMGS = 7;
 
 function init(){
-    buildMemes();
-    renderMemes();
+    // buildMemes();
+    renderMemes(gMemes);
+}
+
+function searchKeyWord(keyWord){
+    var memes = gMemes.filter(function(meme) {
+        return meme.keywords.some(function(memeKeyWord){
+            return memeKeyWord.toLowerCase().includes(keyWord.toLowerCase());
+        });
+
+    });
+    renderMemes(memes);
 }

@@ -4,13 +4,14 @@
  * Render memes
  */
 
-function renderMemes() {
+function renderMemes(memes) {
     var $memesGallery__memes = $('.memes-gallery');
-    gMemes.forEach(function (meme) {
+    $memesGallery__memes.empty();
+    memes.forEach(function (meme) {
         var $clone = $('.memes-gallery__meme-template').clone();
         $clone.attr('class', 'memes-gallery__meme hexagon');
-        $clone.css('background-image' , 'url(../assets/imgs/memes/'+ meme.id +'.jpg)');
-        $clone.on('click', function(){
+        $clone.css('background-image', 'url(assets/imgs/memes/' + meme.id + '.jpg)');
+        $clone.on('click', function () {
             showGenerator(meme.url);
         });;
         $clone.toggle();

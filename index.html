@@ -41,16 +41,19 @@
                 </ul>
             </nav>
         </header>
-        <main class="memes-gallery__container">
+        <main class="memes-gallery__container flex flex-col align-center">
+            <div class="search-meme__container flex flex-col">
+                <h3>Search for meme by keyword</h3>
+                <input type="text" class="search-meme__input" oninput="searchKeyWord(this.value)" />
+            </div>
             <div class="inner-container flex flex-col flex-wrap align-center">
-
                 <div class="memes-gallery">
-                    <!--Hexogan template-->
+                </div>
+                <!--Hexogan template-->
                     <div class="memes-gallery__meme-template" style="display: none;">
                         <div class="face1"></div>
                         <div class="face2"></div>
                     </div>
-                </div>
                 <!-- Meme Generator -->
                 <div class="meme-generator flex-col flex space-between" style="display: none;">
                     <button onclick="backToGallery()">Go back</button>
