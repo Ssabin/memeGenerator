@@ -606,7 +606,7 @@ fieldset {
     color: #2eac93; }
 
 .memes-gallery__container {
-  padding: 5.625em; }
+  padding-top: 5.625em; }
 
 .memes-gallery__meme {
   margin-bottom: 9.375em; }
@@ -619,12 +619,14 @@ fieldset {
   width: 100%;
   height: auto; }
 
-@media (min-width: 642px) {
-  .memes-gallery {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between; } }
+.memes-gallery {
+  border: 2px solid #e4e9eb; }
+  @media (min-width: 642px) {
+    .memes-gallery {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between; } }
 
 .meme-edit__form {
   width: 100%;
@@ -636,7 +638,10 @@ fieldset {
 
 .developer {
   color: #d7fcf5;
-  margin-bottom: 1.25em; }
+  margin-bottom: 1.25em;
+  border-left: 1px solid #219d84;
+  border-right: 1px solid #219d84;
+  padding: 0.9375em; }
   @media (min-width: 642px) {
     .developer {
       flex-direction: row; } }
@@ -652,6 +657,9 @@ fieldset {
 
 .developer_2 {
   background-image: url("../assets/imgs/memes/2.jpg"); }
+  @media (min-width: 642px) {
+    .developer_2 {
+      order: 2; } }
 
 .developer-name {
   font-size: 1.875rem; }
@@ -665,7 +673,11 @@ fieldset {
 
 .contact {
   height: auto;
-  background-color: #323232; }
+  background-color: #323232;
+  padding: 0.6875em; }
+  .contact .inner-container {
+    border-top: 1px solid #2b2b2b;
+    border-bottom: 1px solid #2b2b2b; }
 
 .contact-info {
   font-size: 0.75em; }

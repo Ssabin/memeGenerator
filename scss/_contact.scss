@@ -1,6 +1,11 @@
 .contact {
     height: auto;
     background-color: #323232;
+    padding: em(11px);
+    .inner-container {
+        border-top: 1px solid #2b2b2b;
+        border-bottom: 1px solid #2b2b2b;
+    }
 }
 
 .contact-info {

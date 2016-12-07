@@ -5,6 +5,9 @@
 .developer {
     color: #d7fcf5;
     margin-bottom: em(20px);
+    border-left: 1px solid #219d84;
+    border-right: 1px solid #219d84;
+    padding: em(15px);
     @include from-mobile-only{
         flex-direction: row;
     }
@@ -28,6 +31,9 @@
 
 .developer_2{
     background-image: url('../assets/imgs/memes/2.jpg');
+    @include from-mobile-only {
+    order: 2;
+    }
 }
 
 .developer-name {

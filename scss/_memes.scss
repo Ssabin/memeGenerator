@@ -1,5 +1,5 @@
 .memes-gallery__container{
-    padding: em(90px);
+    padding-top: em(90px);
 }
 
 .memes-gallery__meme{
@@ -18,6 +18,7 @@
 } 
 
 .memes-gallery {
+    border: 2px solid #e4e9eb;
    @include from-mobile-only {
     display: flex;
     flex-direction: row;
