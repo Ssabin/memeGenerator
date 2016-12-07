@@ -17,6 +17,12 @@
   }
 }
 
+@mixin from-tablet-only {
+  @media (min-width: $tablet-breakpoint) {
+    @content;
+  }
+}
+
 /*----------  Flex Helpers  ----------*/
 
 .flex {

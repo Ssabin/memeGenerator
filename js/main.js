@@ -4,8 +4,8 @@ const MEMES_IMGS = 7;
 function init(){
     // buildMemes();
     renderMemes(gMemes);
-    var gKeyWordsPopularity = JSON.parse(localStorage.getItem('keyWordsPopularity'));
-    if (!gKeyWordsPopularity) saveToLocalStorageFirstTime(); 
+    gKeyWordsPopularity = JSON.parse(localStorage.getItem('keyWordsPopularity'));
+    if (!gKeyWordsPopularity) saveKeyWordsLocalStorageFirstTime(); 
     resetState();
 }
 
@@ -16,7 +16,7 @@ function searchKeyWord(keyWord){
         });
     });
     renderMemes(memes);
-    saveToLocalStorage(keyWord);
+    saveKeyWordsLocalStorage(keyWord);
 }
 
 function selectKeyWord(keyWord) {
@@ -26,5 +26,20 @@ function selectKeyWord(keyWord) {
         });
     });
     renderMemes(memes);
-    saveToLocalStorage(keyWord);
+    saveKeyWordsLocalStorage(keyWord);
+}
+
+function saveContactLocalStorage () {
+    var $name = $('#form-name').val();
+    var $email = $('#form-email').val();
+    var $subject = $('#form-subject').val();
+    var $txt = $('#form-txt').val();
+    var contactForm = {
+        name: $name,
+        email: $email,
+        subject: $subject,
+        message: $txt
+    };
+    var contactToSave = JSON.stringify(contactForm);
+    localStorage.setItem('Contact Info', contactToSave);
 }

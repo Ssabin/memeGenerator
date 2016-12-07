@@ -29,7 +29,7 @@
 }
 
 .meme-generator__container{
-    @include from-mobile-only{
+    @include from-tablet-only{
         flex-direction: row;
     }
 }
@@ -46,12 +46,24 @@
 
 // search container
 .meme-generator__canvas{
+
     // border: 1px solid black;
-    max-width: 100%;
+    max-width: 80%;
+    margin: auto;
 }
 
 .topText , .bottomText{
     width: 100%;
+}
+
+.meme-generator__back {
+    width: em(100px);
+    height: 30px;
+    margin: em(10px) auto;
+    background-color: #2eb398;
+    color: white;
+    font-size: rem(12px);
+    border: none;
 }
 
 .top-text__generator-features > * , .bottom-text__generator-features > *{

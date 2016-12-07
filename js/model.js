@@ -39,7 +39,7 @@ var gMemes = [
 var gState;
 var gKeyWordsPopularity;
 
-function saveToLocalStorageFirstTime() {
+function saveKeywordsLocalStorageFirstTime() {
     gKeyWordsPopularity = {
         'happy': 0,
         'funny': 0,
@@ -55,7 +55,7 @@ function saveToLocalStorageFirstTime() {
     localStorage.setItem('keyWordsPopularity', keyWordsString);
 }
 
-function saveToLocalStorage(keyWord) {
+function saveKeyWordsLocalStorage(keyWord) {
     // var keyWords = JSON.parse(localStorage.getItem('keyWordsPopularity'));
     if (gKeyWordsPopularity[keyWord.toLowerCase()] >= 0) gKeyWordsPopularity[keyWord.toLowerCase()]++;
     var keyWordsString = JSON.stringify(gKeyWordsPopularity);

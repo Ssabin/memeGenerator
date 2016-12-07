@@ -40,6 +40,7 @@
                     </li>
                 </ul>
             </nav>
+<div class="arrow-down"></div>
         </header>
         <main class="memes-gallery__container flex flex-col align-center">
             <div class="search-meme__container flex flex-col">
@@ -70,7 +71,7 @@
                 </div>
                 <!-- Meme Generator -->
                 <div class="meme-generator flex-col flex space-between" style="display: none;">
-                    <button onclick="backToGallery()">Go back</button>
+                    <button onclick="backToGallery()" class="meme-generator__back">Go Back</button>
                     <div class="meme-generator__container flex flex-col">
                         <canvas id="canvas"  width="568" height="360" class="meme-generator__canvas">Sorry, no canvas available</canvas>
                         <form class="meme-edit__form flex flex-col">
@@ -218,13 +219,13 @@
                 <div class="contact-form flex flex-col">
                     <form class="contact-form__form">
                         <ul class="clean-list">
-                            <li><input type="text" placeholder="Name (Required)" class="contact-form__field"></li>
-                            <li><input type="email" placeholder="Email (Required)" class="contact-form__field"></li>
-                            <li><input type="text" placeholder="Subject" class="contact-form__field"></li>
-                            <li><textarea rows="8" placeholder="Write your message here..." class="contact-form__field"></textarea></li>
+                            <li><input type="text" placeholder="Name (Required)" class="contact-form__field" id="form-name"></li>
+                            <li><input type="email" placeholder="Email (Required)" class="contact-form__field" id="form-email"></li>
+                            <li><input type="text" placeholder="Subject" class="contact-form__field" id="form-subject"></li>
+                            <li><textarea rows="8" placeholder="Write your message here..." class="contact-form__field" id="form-txt"></textarea></li>
                         </ul>
                         <div class="contact-form__send flex">
-                            <button class="contact-form__button">Send</button>
+                            <button class="contact-form__button" onclick="saveContactLocalStorage(); return false;">Send</button>
                         </div>
                     </form>
                     <div class="contact-info">
