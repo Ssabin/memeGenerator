@@ -6,7 +6,7 @@
   "scripts": {
     "start": "npm-run-all --parallel browser styles",
     "browser": "lite-server",
-    "styles": "node-sass scss/style.scss -o dist --watch",
+    "styles": "node-sass scss/style.scss dist/style.css -W",
     "build": "rm -rf build && copyfiles assets/* index.html assets/fonts/**/* dist/* build"
   },
   "devDependencies": {
@@ -16,6 +16,7 @@
     "npm-run-all": "^3.1.1"
   },
   "dependencies": {
+    "font-awesome": "^4.7.0",
     "jquery": "^3.1.1",
     "normalize.css": "^5.0.0"
   }
