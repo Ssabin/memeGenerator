@@ -27,7 +27,8 @@ function showGenerator(memeUrl) {
     var $gallery = $('.memes-gallery');
     $memeGenerator.toggle();
     $gallery.slideToggle();
-    initCanvas(memeUrl);
+    gState.currMemeUrl = memeUrl;
+    initCanvas();
 }
 
 /**

@@ -1,5 +1,7 @@
 'use strict';
+
 var gMemes;
+var gState; 
 
 /**
  * Builds model 
