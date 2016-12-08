@@ -5,6 +5,9 @@ var ctx;
 var gElTopTextBox; //Top text input element
 var gElBottomTextBox; //Bottom text input element
 
+/**
+ * Init canvas area
+ */
 function initCanvas() {
     canvas = document.querySelector('#canvas');
     ctx = canvas.getContext('2d');
@@ -13,10 +16,9 @@ function initCanvas() {
 }
 
 /**
- * This function will draw the img and triggers 2 functions which draw texts on the canvas
+ * Draw the img and triggers 2 functions which draw texts on the canvas
  */
 function drawOnCanvas() {
-    // drawImgOnCanvas();
     ctx.clearRect(0, 0, 568, 360);
     var img = new Image();
     img.src = gState.currMemeUrl;

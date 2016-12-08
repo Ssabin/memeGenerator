@@ -16,13 +16,13 @@
                 <ul class="clean-list main-nav__items flex align-center full-height">
                     <li class="main-nav__item">
                         <a href="#memes-search">
-                    Search
+                            Search
                     </a>
                     </li>
                     <li class="main-nav__item">
-                        <a href="#about">
-                    About
-                    </a>
+                        <a href="#memes-gallery">
+                            Memes
+                        </a>
                     </li>
                     <li class="main-nav__item">
                         <a href="#section-down" class="arrow-section__down">
@@ -30,14 +30,14 @@
                         </a>
                     </li>
                     <li class="main-nav__item">
-                        <a href="#memes-gallery">
-                    Memes
-                    </a>
+                        <a href="#about">
+                            About
+                        </a>
                     </li>
                     <li class="main-nav__item">
                         <a href="#contact">
-                    Contact
-                    </a>
+                            Contact
+                        </a>
                     </li>
                 </ul>
             </nav>
@@ -54,7 +54,7 @@
                 <!-- Popular Keyboards / Change class name? -->
                 <div class="search-keywords flex flex-wrap space-between">
                 </div>
-                 <!--<div class="search-meme__url flex flex-col">
+                <!--<div class="search-meme__url flex flex-col">
                     <h3>Search for meme by url</h3>
                     <input type="text" class="search-meme__url-input" oninput="showGenerator(this.value)" />
                     <input type="submit" onclick="return false;" />
@@ -107,11 +107,16 @@
                                     <!-- Text Shadow and color -->
                                     <div class="top-text__generator-font-effect">
                                         <input type="color" class="top-text__color" oninput="changeFontColor(this.value , 'top')">
-                                        <!--<i class="fa fa-tint" aria-hidden="true"></i>-->
+
                                         </input>
                                         <button class="top-text__shadow" onclick="changeTextShadow('top')">
-                                        <i class="fa fa-adjust" aria-hidden="true"></i>
-                                    </button>
+                                            <i class="fa fa-adjust" aria-hidden="true"></i>
+                                        </button>
+                                    </div>
+                                    <div class="top-text__generator-empty">
+                                        <button class="top-text__empty" onclick="resetText('top')">
+                                            <i class="fa fa-trash" aria-hidden="true"></i>
+                                        </button>
                                     </div>
                                 </div>
                             </div>
@@ -147,13 +152,18 @@
                                         <!--<i class="fa fa-tint" aria-hidden="true"></i>-->
                                         </input>
                                         <button class="bottom-text__shadow" onclick="changeTextShadow('bottom')">
-                                        <i class="fa fa-adjust" aria-hidden="true"></i>
-                                    </button>
+                                            <i class="fa fa-adjust" aria-hidden="true"></i>
+                                         </button>
+                                    </div>
+                                    <div class="bottom-text__generator-empty">
+                                        <button class="bottom-text__empty" onclick="resetText('bottom')">
+                                            <i class="fa fa-trash" aria-hidden="true"></i>
+                                        </button>
                                     </div>
                                 </div>
                             </div>
                             <div class="meme-generator__buttons">
-                                <a id="download" onclick="downloadImg(this)">
+                                <a id="download" onclick="downloadMeme(this)">
                                     <button class="meme-generator__button">Download</button>
                                 </a>
                                 <button class="meme-generator__button" onclick="resetCanvas()">Reset</button>

@@ -3,7 +3,6 @@
 /**
  * Render memes
  */
-
 function renderMemes(memes) {
     var $memesGallery__memes = $('.memes-gallery');
     var $memesGalleryTemplate = $('.memes-gallery__meme-template');
@@ -21,7 +20,7 @@ function renderMemes(memes) {
 }
 
 /**
-onclick- show meme editor
+ * Toggeles Meme generator
 */
 
 function showGenerator(memeUrl) {
@@ -47,7 +46,7 @@ function backToGallery() {
 }
 
 /**
- * This function renders keywords to DOM
+ * Renders keywords to DOM
  */
 
 function renderKeyWords(){
@@ -64,4 +63,13 @@ function renderKeyWords(){
         setKeyWordFontSize(gKeyWordsPopularity[keyWord] , keyWord);
     }
 
+}
+
+/**
+ * Sets keyword new font size by the keyWordSearchCount 
+ */
+function setKeyWordFontSize(keyWordSearchCount, keyWord) {
+    var $keyWordDiv = $('.' + keyWord);
+    var fontSize = calcKeyWordSize(keyWordSearchCount);
+    $keyWordDiv.css('font-size', fontSize + 'px');
 }

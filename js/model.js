@@ -1,4 +1,7 @@
 'use strict';
+/**
+ * Memes model
+ */
 var gMemes = [
     {
         id: 1,
@@ -39,6 +42,9 @@ var gMemes = [
 var gState;
 var gKeyWordsPopularity;
 
+/**
+ * Sets gKeyWordsPopularity with init values
+ */
 function saveKeywordsLocalStorageFirstTime() {
     gKeyWordsPopularity = {
         'happy': 0,
@@ -55,6 +61,9 @@ function saveKeywordsLocalStorageFirstTime() {
     localStorage.setItem('keyWordsPopularity', keyWordsString);
 }
 
+/**
+ * Update local Storage keyWordsPopularity key values
+ */
 function saveKeyWordsLocalStorage(keyWord) {
     if (gKeyWordsPopularity[keyWord.toLowerCase()] >= 0) gKeyWordsPopularity[keyWord.toLowerCase()]++;
     var keyWordsString = JSON.stringify(gKeyWordsPopularity);

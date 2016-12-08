@@ -1,14 +1,14 @@
 'use strict';
 const MEMES_IMGS_PREVIEW_COUNT = 7;
 const BASIC_FONTSIZE = 16;
+const MAX_FONTSIZE = 55;
 const HEADER_SIZE = 83;
 
 /**
- * This function will be called when body loads
+ * Body load functions
  */
 function init() {
     renderMemes(gMemes);
-
     gKeyWordsPopularity = JSON.parse(localStorage.getItem('keyWordsPopularity'));
     if (!gKeyWordsPopularity) saveKeywordsLocalStorageFirstTime();
     renderKeyWords();
@@ -18,7 +18,7 @@ function init() {
 }
 
 /**
- * This function will set anmation for anchors and toggles class active to the clicked element
+ * Set anmation for anchors and toggles class active to the clicked element
  */
 function setAnchorsAnimations() {
     $('.main-nav__item a').click(function (e) {
@@ -32,7 +32,7 @@ function setAnchorsAnimations() {
 }
 
 /**
- * This function will be triggered every time user clicks on search input
+ * Eevery time user types it will show him memes under this keyword
  */
 function searchKeyWord(keyWord) {
     var memes = gMemes.filter(function (meme) {
@@ -41,11 +41,14 @@ function searchKeyWord(keyWord) {
         });
     });
     renderMemes(memes);
-    saveKeyWordsLocalStorage(keyWord);
+    if(memes.length > 0){
+        saveKeyWordsLocalStorage(keyWord);
+        setKeyWordFontSize(gKeyWordsPopularity[keyWord] , keyWord);
+    }
 }
 
 /**
- * This function will be triggered when user clicks on Key word
+ * Renders relative memes under keyword clicked
  */
 function selectKeyWord(keyWord) {
     var memes = gMemes.filter(function (meme) {
@@ -59,7 +62,7 @@ function selectKeyWord(keyWord) {
 }
 
 /**
- * This function save contact form inputs vals to local storage
+ * Save contact form inputs vals to local storage
  */
 function saveContactLocalStorage() {
     var $name = $('#form-name').val();
@@ -78,18 +81,10 @@ function saveContactLocalStorage() {
 }
 
 /**
- * This Function sets keyword new font size by the keyWordSearchCount 
- */
-function setKeyWordFontSize(keyWordSearchCount, keyWord) {
-    var $keyWordDiv = $('.' + keyWord);
-    var fontSize = calcKeyWordSize(keyWordSearchCount);
-    $keyWordDiv.css('font-size', fontSize + 'px');
-}
-
-/**
- * This function calc new Font size for keyword
+ * Calc new Font size for keyword
  */
 function calcKeyWordSize(keyWordSearchCount) {
-    return keyWordSearchCount + BASIC_FONTSIZE;
+    var fontSize =  keyWordSearchCount + BASIC_FONTSIZE;
+    return fontSize > MAX_FONTSIZE ? MAX_FONTSIZE : fontSize;
 }
 
