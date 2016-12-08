@@ -4,8 +4,9 @@
  * Render memes
  */
 
-function renderMemes(memes, display) {
+function renderMemes(memes) {
     var $memesGallery__memes = $('.memes-gallery');
+    var $memesGalleryTemplate = $('.memes-gallery__meme-template');
     $memesGallery__memes.empty();
     var $template = $('.memes-gallery__meme-template').find('.memes-gallery__meme');
     memes.forEach(function (meme) {
@@ -35,7 +36,7 @@ function toggleMemesList() {
 }
 
 /**
-onclick- show meme editor
+ * Toggeles Meme generator
 */
 
 function showGenerator(memeUrl) {
@@ -44,26 +45,24 @@ function showGenerator(memeUrl) {
     $memeGenerator.toggle();
     $gallery.slideToggle();
     gState.currMemeUrl = memeUrl;
-    initCanvas();
+    drawOnCanvas();
 }
 
 /**
- * Return button to gallery...
+ * Toggles preview back
  */
 
 function backToGallery() {
     var $memeGenerator = $('.meme-generator');
     var $gallery = $('.memes-gallery');
     $memeGenerator.toggle();
-    $memeGenerator.find('img').attr('src', '');
-    $memeGenerator.find('#topText').val('');
-    $memeGenerator.find('#bottomText').val('');
+    resetCanvasGeneratorInputs();
     resetState();
     $gallery.toggle();
 }
 
 /**
- * This function renders keywords to DOM
+ * Renders keywords to DOM
  */
 
 function renderKeyWords() {
@@ -80,4 +79,13 @@ function renderKeyWords() {
         setKeyWordFontSize(gKeyWordsPopularity[keyWord], keyWord);
     }
 
+}
+
+/**
+ * Sets keyword new font size by the keyWordSearchCount 
+ */
+function setKeyWordFontSize(keyWordSearchCount, keyWord) {
+    var $keyWordDiv = $('.' + keyWord);
+    var fontSize = calcKeyWordSize(keyWordSearchCount);
+    $keyWordDiv.css('font-size', fontSize + 'px');
 }
