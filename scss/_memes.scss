@@ -56,7 +56,7 @@
     width: 100%;
 }
 
-.meme-generator__back {
+.meme-generator__button {
     width: em(100px);
     height: 30px;
     margin: em(10px) auto;
@@ -64,6 +64,11 @@
     color: white;
     font-size: rem(12px);
     border: none;
+    cursor: pointer;
+    &:hover {
+        transition: all 0.5s ease;
+        background-color: #2caae1;
+    }
 }
 
 .top-text__generator-features > * , .bottom-text__generator-features > *{

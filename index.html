@@ -76,7 +76,7 @@
                 <!-- Meme Generator -->
                 <div class="meme-generator flex-col flex space-between" style="display: none;">
                     <!-- Back to preview -->
-                    <button onclick="backToGallery()" class="meme-generator__back">Go Back</button>
+                    <button onclick="backToGallery()" class="meme-generator__button">Go Back</button>
                     <div class="meme-generator__container flex flex-col">
                         <canvas id="canvas" width="568" height="360" class="meme-generator__canvas">Sorry, no canvas available</canvas>
                         <!-- Meme Generator form -->
@@ -156,7 +156,10 @@
                                     </div>
                                 </div>
                             </div>
-                            <input type="submit" id="enter-text" onclick="return false;">
+                            <a id="download" onclick="downloadImg(this)">
+                                <button class="meme-generator__button">Download</button>
+                            </a>
+                            <!--<input type="submit" id="enter-text" onclick="return false;">-->
                         </div>
                     </div>
                 </div>
@@ -211,12 +214,12 @@
                         <div class="developer-title">
                             Human
                         </div>
-                        
+
                         <div class="developer-bio">
                             The best way to describe myself is this: <br/>
-                            <br/>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A et voluptatum deserunt eius tempore a
-                            rchitecto provident quam autem quia fugit veniam totam, deleniti quaerat iusto eveniet quasi. Libero, 
-                            aliquam et!
+                            <br/>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A et voluptatum deserunt eius
+                            tempore a rchitecto provident quam autem quia fugit veniam totam, deleniti quaerat iusto eveniet
+                            quasi. Libero, aliquam et!
                         </div>
                         <div class="developer-socialmedia__icons">
                             <a href="https://il.linkedin.com/in/itai-kushmar-15574b122">
@@ -229,7 +232,7 @@
                                 <i class="fa fa-twitter-square" aria-hidden="true"></i>
                             </a>
                             <a href="tel:054-934-48-01">
-                            <i class="fa fa-phone-square" aria-hidden="true"></i>
+                                <i class="fa fa-phone-square" aria-hidden="true"></i>
                             </a>
                         </div>
                     </div>

@@ -20,7 +20,7 @@ function drawOnCanvas() {
     ctx.clearRect(0, 0, 568, 360);
     var img = new Image();
     img.src = gState.currMemeUrl;
-    img.onload = function () {
+    img.onload = function() {
         ctx.drawImage(img, 0, 0, 568, 360);
         drawTopTextOnCanvas();
         drawBottomTextOnCanvas();
@@ -43,8 +43,8 @@ function drawTopTextOnCanvas() {
         ctx.shadowOffsetX = 0;
         ctx.shadowOffsetY = 0;
         ctx.shadowBlur = 10;
-    }else{
-        ctx.shadowBlur = 0;        
+    } else {
+        ctx.shadowBlur = 0;
     }
     ctx.fillText(gState.currTopText, 284, 50);
 }
@@ -66,8 +66,8 @@ function drawBottomTextOnCanvas() {
         ctx.shadowOffsetX = 0;
         ctx.shadowOffsetY = 0;
         ctx.shadowBlur = 10;
-    }else{
-        ctx.shadowBlur = 0;        
+    } else {
+        ctx.shadowBlur = 0;
     }
     ctx.fillText(gState.currBottomText, 284, 320);
 }
@@ -106,7 +106,7 @@ function changeFontColor(fontColorHex, textLocation) {
 
 function changeTextShadow(textLocation) {
     if (textLocation === 'top') {
-        gState.currTopTextShadow =  !gState.currTopTextShadow;
+        gState.currTopTextShadow = !gState.currTopTextShadow;
     } else {
         gState.currBottomTextShadow = !gState.currTopTextShadow;
     }
@@ -120,6 +120,11 @@ function alignText(position, textLocation) {
         gState.currBottomTextAlignment = position;
     }
     drawOnCanvas();
+}
+
+function downloadImg(elLink) {
+    elLink.href = canvas.toDataURL();
+    elLink.download = 'perfectMeme.jpg';
 }
 
 // function changeText(textLocation , value , action){
