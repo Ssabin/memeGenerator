@@ -10,32 +10,32 @@
 
 <body onload="init()">
     <div class="container">
-        <header>
+        <header class="header__fixed">
             <!-- Header Navigation -->
             <nav class="main-nav flex justify-center full-height">
                 <ul class="clean-list main-nav__items flex align-center full-height">
                     <li class="main-nav__item">
-                        <a href="#">
-                    Memes
+                        <a href="#memes-search">
+                    Search
                     </a>
                     </li>
                     <li class="main-nav__item">
-                        <a href="#">
+                        <a href="#about">
                     About
                     </a>
                     </li>
                     <li class="main-nav__item">
-                        <a href="#">
+                        <a href="#section-down" class="arrow-section__down">
                             <img src="assets/imgs/logo.png" alt="">
                         </a>
                     </li>
                     <li class="main-nav__item">
-                        <a href="#">
-                    Gallery
+                        <a href="#memes-gallery">
+                    Memes
                     </a>
                     </li>
                     <li class="main-nav__item">
-                        <a href="#">
+                        <a href="#contact">
                     Contact
                     </a>
                     </li>
@@ -46,7 +46,7 @@
         <!-- Meme container -->
         <main class="memes-gallery__container flex flex-col align-center">
             <!-- Meme Search -->
-            <div class="search-meme__container flex flex-col align-center">
+            <div id="memes-search" class="search-meme__container flex flex-col align-center">
                 <div class="search-meme flex flex-col">
                     <h3>Search for meme by keyword</h3>
                     <input type="text" class="search-meme__input" oninput="searchKeyWord(this.value)" />
@@ -54,10 +54,15 @@
                 <!-- Popular Keyboards / Change class name? -->
                 <div class="search-keywords flex flex-wrap space-between">
                 </div>
+                 <!--<div class="search-meme__url flex flex-col">
+                    <h3>Search for meme by url</h3>
+                    <input type="text" class="search-meme__url-input" oninput="showGenerator(this.value)" />
+                    <input type="submit" onclick="return false;" />
+                </div>-->
             </div>
             <div class="inner-container flex flex-col flex-wrap align-center">
                 <!-- Meme Hexogan preview -->
-                <div class="memes-gallery">
+                <div id="memes-gallery" class="memes-gallery">
                 </div>
                 <!--Hexogan template-->
                 <div class="memes-gallery__meme-template" style="display: none;">
@@ -68,7 +73,7 @@
                 <div class="meme-generator flex-col flex space-between" style="display: none;">
                     <!-- Back to preview -->
                     <button onclick="backToGallery()" class="meme-generator__button">Go Back</button>
-                    <div class="meme-generator__container flex flex-col">
+                    <div class="meme-generator__container flex flex-col align-center">
                         <canvas id="canvas" width="568" height="360" class="meme-generator__canvas">Sorry, no canvas available</canvas>
                         <!-- Meme Generator form -->
                         <div class="meme-edit__form flex flex-col">
@@ -156,7 +161,8 @@
                 </div>
             </div>
         </main>
-        <div class="about flex align-center">
+        <!-- About section -->
+        <div id="about" class="about flex align-center">
             <div class="inner-container">
                 <div class="developer flex flex-col align-center">
                     <!--<div class="developer-pic flex justify-center">
@@ -230,7 +236,8 @@
                 </div>
             </div>
         </div>
-        <div class="contact flex flex-col">
+        <!-- Contact section -->
+        <div id="contact" class="contact flex flex-col">
             <div class="inner-container flex flex-col">
                 <div class="contact-form__title">Get in Touch</div>
                 <div class="contact-form__subtitle">In order to get in touch use the contact form below:</div>

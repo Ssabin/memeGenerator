@@ -44,7 +44,7 @@ function drawTopTextOnCanvas() {
         ctx.shadowOffsetY = 0;
         ctx.shadowBlur = 10;
     }
-    ctx.fillText(gState.currTopText, 200, 50);
+    ctx.fillText(gState.currTopText, 284, 50);
     ctx.shadowBlur = 0;
 }
 
