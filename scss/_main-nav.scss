@@ -1,3 +1,9 @@
+.header__fixed{
+    position: fixed;
+    top: 0;
+    z-index: 9999;
+}
+
 .main-nav{
     background-color: #323232;
 }
@@ -12,6 +18,10 @@
     }
 }
 
+.active{
+    color: #2eac93 !important;
+}
+
 .main-nav__item a{
     color: #efefef;
     font-size: rem(12px);
@@ -20,6 +30,8 @@
         color: #2eac93;
     }
 }
+
+
 
 .arrow-down {
 margin: auto;

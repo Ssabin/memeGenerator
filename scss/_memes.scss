@@ -1,6 +1,6 @@
-// .memes-gallery__container{
-//     padding-top: em(90px);
-// }
+.memes-gallery__container{
+    margin-top: em(90px);
+}
 
 .memes-gallery__meme{
     margin-bottom: em(150px);
@@ -46,10 +46,13 @@
 
 // search container
 .meme-generator__canvas{
-
     // border: 1px solid black;
+    @include from-tablet-only{
+        --canvas__margin-right: em(15px);
+        margin-right: var(--canvas__margin-right);
+        width: calc(100% - var(--canvas__margin-right));
+    }
     max-width: 80%;
-    margin: auto;
 }
 
 .topText , .bottomText{
