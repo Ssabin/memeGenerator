@@ -87,13 +87,30 @@
 
 // Memes search
 .search-meme__container{
-    margin-bottom: em(60px);
+    margin: em(60px) 0;
     @include from-mobile-only {
         flex-direction: row;
         align-items: center;
+        justify-content: center;
+        
+    }
+}
+.search-meme__container > *{
+    @include from-mobile-only {    
+        &:not(:first-child){
+            margin-left: em(50px);
+        }
     }
 }
 
+
 .search-keywords {
-    margin-left: em(50px);
+    max-width: 35%;
+    //     margin-left: em(50px);
+    // }        
+}
+
+.search-keywords__keyword{
+    //didnt work well with rem
+    font-size: 16px;
 }

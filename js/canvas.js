@@ -13,10 +13,10 @@ function initCanvas() {
     drawOnCanvas();
 }
 /**
- * This function triggers 3 functions which will draw the img and texts on the canvas
+ * This function will draw the img and triggers 2 functions which draw texts on the canvas
  */
-
 function drawOnCanvas() {
+    // drawImgOnCanvas();
     ctx.clearRect(0, 0, 568, 360);
     var img = new Image();
     img.src = gState.currMemeUrl;
@@ -43,10 +43,9 @@ function drawTopTextOnCanvas() {
         ctx.shadowOffsetX = 0;
         ctx.shadowOffsetY = 0;
         ctx.shadowBlur = 10;
-    } else {
-        ctx.shadowBlur = 0;
     }
-    ctx.fillText(gState.currTopText, 284, 50);
+    ctx.fillText(gState.currTopText, 200, 50);
+    ctx.shadowBlur = 0;
 }
 
 /**
@@ -108,7 +107,7 @@ function changeTextShadow(textLocation) {
     if (textLocation === 'top') {
         gState.currTopTextShadow = !gState.currTopTextShadow;
     } else {
-        gState.currBottomTextShadow = !gState.currTopTextShadow;
+        gState.currBottomTextShadow = !gState.currBottomTextShadow;
     }
     drawOnCanvas();
 }

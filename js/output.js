@@ -46,3 +46,23 @@ function backToGallery() {
     resetState();
     $gallery.toggle();
 }
+
+/**
+ * This function renders keywords to DOM
+ */
+
+function renderKeyWords(){
+    var $searchKeyWords = $('.search-keywords');
+    for(var keyWord in gKeyWordsPopularity){
+        var $keyWordDiv = $(document.createElement('div'));
+        $keyWordDiv.text(keyWord);
+        $keyWordDiv.addClass('search-keywords__keyword ' + keyWord);
+        $keyWordDiv.on('click' , function(e){
+            selectKeyWord(e.currentTarget.innerText);
+        });
+        $searchKeyWords.append($keyWordDiv);
+
+        setKeyWordFontSize(gKeyWordsPopularity[keyWord] , keyWord);
+    }
+
+}
