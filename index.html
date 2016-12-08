@@ -46,22 +46,13 @@
         <!-- Meme container -->
         <main class="memes-gallery__container flex flex-col align-center">
             <!-- Meme Search -->
-            <div class="search-meme__container flex flex-col">
-                <div class="search-meme">
+            <div class="search-meme__container flex flex-col align-center">
+                <div class="search-meme flex flex-col">
                     <h3>Search for meme by keyword</h3>
                     <input type="text" class="search-meme__input" oninput="searchKeyWord(this.value)" />
                 </div>
                 <!-- Popular Keyboards / Change class name? -->
-                <div class="search-keywords align-center">
-                    <div onclick="selectKeyWord(this.innerText)" class="search-keywords__keyword">Happy</div>
-                    <div onclick="selectKeyWord(this.innerText)" class="search-keywords__keyword">Funny</div>
-                    <div onclick="selectKeyWord(this.innerText)" class="search-keywords__keyword">Inspiring</div>
-                    <div onclick="selectKeyWord(this.innerText)" class="search-keywords__keyword">Smart</div>
-                    <div onclick="selectKeyWord(this.innerText)" class="search-keywords__keyword">Cheering</div>
-                    <div onclick="selectKeyWord(this.innerText)" class="search-keywords__keyword">Sad</div>
-                    <div onclick="selectKeyWord(this.innerText)" class="search-keywords__keyword">Dramatic</div>
-                    <div onclick="selectKeyWord(this.innerText)" class="search-keywords__keyword">Stupid</div>
-                    <div onclick="selectKeyWord(this.innerText)" class="search-keywords__keyword">History</div>
+                <div class="search-keywords flex flex-wrap space-between">
                 </div>
             </div>
             <div class="inner-container flex flex-col flex-wrap align-center">
