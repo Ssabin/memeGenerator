@@ -44,7 +44,7 @@ function drawTopTextOnCanvas() {
         ctx.shadowOffsetY = 0;
         ctx.shadowBlur = 10;
     }
-    ctx.fillText(gState.currTopText, 200, 50);
+    ctx.fillText(gState.currTopText, 284, 50);
     ctx.shadowBlur = 0;
 }
 
@@ -124,6 +124,15 @@ function alignText(position, textLocation) {
 function downloadImg(elLink) {
     elLink.href = canvas.toDataURL();
     elLink.download = 'perfectMeme.jpg';
+}
+
+function resetCanvas() {
+    var currUrl = gState.currMemeUrl;
+    resetState();
+    gState.currMemeUrl = currUrl;
+    $('#topText').val('');
+    $('#bottomText').val('');
+    drawOnCanvas();
 }
 
 // function changeText(textLocation , value , action){
