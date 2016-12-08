@@ -20,7 +20,10 @@ function renderMemes(memes) {
     });
 }
 
-// toggles display modes: list and grid. also changes the button
+/**
+ * Toggles display modes: list and grid. also changes the button
+ */
+
 function toggleMemesList() {
     $('.memes-gallery__keywords').toggle();
     $('.memes-gallery').toggleClass('memes-gallery__list');

@@ -3,7 +3,9 @@
 }
 
 .memes-gallery__meme{
-    margin-bottom: em(150px);
+    margin-bottom: em(130px);
+    margin-left: em(5px);
+    margin-right: em(5px);
 }
 
 .memes-gallery {
@@ -38,11 +40,11 @@
     max-width: 100%;
 }
 
-.meme-generator__container{
-    @include from-tablet-only{
-        flex-direction: row;
-    }
-}
+// .meme-generator__container{
+// @include from-tablet-only{
+//     flex-direction: row;
+//     }
+// }
 
 .meme-generator .meme-generator__meme{
     width: 100%;
