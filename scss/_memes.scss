@@ -13,8 +13,18 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
-    
   }
+}
+
+.memes-gallery__list{
+    flex-direction: column;
+    align-self: flex-start;
+    margin-bottom: em(150px);
+}
+
+.memes-gallery__meme-list {
+    display: flex;
+    flex-direction: row;
 }
 
 /** Memes edit **/
@@ -116,4 +126,8 @@
 .search-keywords__keyword{
     //didnt work well with rem
     font-size: 16px;
+}
+
+.memes-gallery__keywords {
+    margin-left: em(5px);
 }

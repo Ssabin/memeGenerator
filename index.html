@@ -54,11 +54,14 @@
                 <!-- Popular Keyboards / Change class name? -->
                 <div class="search-keywords flex flex-wrap space-between">
                 </div>
-                 <!--<div class="search-meme__url flex flex-col">
+                <!--<div class="search-meme__url flex flex-col">
                     <h3>Search for meme by url</h3>
                     <input type="text" class="search-meme__url-input" oninput="showGenerator(this.value)" />
                     <input type="submit" onclick="return false;" />
                 </div>-->
+                <div class="memes-display">
+                    <i class="fa fa-list-ul" aria-hidden="true" onclick="toggleMemesList()"></i>&nbsp;
+                </div>
             </div>
             <div class="inner-container flex flex-col flex-wrap align-center">
                 <!-- Meme Hexogan preview -->
@@ -66,8 +69,13 @@
                 </div>
                 <!--Hexogan template-->
                 <div class="memes-gallery__meme-template" style="display: none;">
-                    <div class="face1"></div>
-                    <div class="face2"></div>
+                    <div class="memes-gallery__meme">
+                        <div class="hexagon">
+                            <div class="face1"></div>
+                            <div class="face2"></div>
+                        </div>
+                        <div class="memes-gallery__keywords" style="display: none;"></div>
+                    </div>
                 </div>
                 <!-- Meme Generator -->
                 <div class="meme-generator flex-col flex space-between" style="display: none;">
