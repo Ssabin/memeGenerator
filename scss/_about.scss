@@ -25,7 +25,7 @@
 }
 
 .developer_2{
-    background-image: url('../assets/imgs/memes/2.jpg');
+    background-image: url('../assets/imgs/ItaiKushmar.jpg');
     @include from-mobile-only {
     order: 2;
     }
@@ -43,7 +43,7 @@
 }
 
 .developer-bio {
-    margin-bottom: em(20px);
+    margin: em(20px);
 }
 
 .developer-story{

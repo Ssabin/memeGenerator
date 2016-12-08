@@ -15,18 +15,8 @@ function initCanvas() {
 /**
  * This function triggers 3 functions which will draw the img and texts on the canvas
  */
-function drawOnCanvas() {
-    drawImgOnCanvas();
-    // setTimeout(function () {
-    //     drawTopTextOnCanvas();
-    //     drawBottomTextOnCanvas();
-    // }, 100);
-}
 
-/**
- * Draw img on canvas
- */
-function drawImgOnCanvas() {
+function drawOnCanvas() {
     ctx.clearRect(0, 0, 568, 360);
     var img = new Image();
     img.src = gState.currMemeUrl;
@@ -45,6 +35,8 @@ function drawTopTextOnCanvas() {
     ctx.font = gState.currTopFontSize + 'px "Lato"';
     //font color    
     ctx.fillStyle = gState.currTopColor;
+    //text alignment
+    ctx.textAlign = gState.currTopTextAlignment;
     //font text shadow    
     if (gState.currTopTextShadow) {
         ctx.shadowColor = 'black';
@@ -54,17 +46,20 @@ function drawTopTextOnCanvas() {
     }else{
         ctx.shadowBlur = 0;        
     }
-    ctx.fillText(gState.currTopText, 200, 50);
+    ctx.fillText(gState.currTopText, 284, 50);
 }
 
 /**
  * Draws bottom text on function 
  */
+
 function drawBottomTextOnCanvas() {
     //font size
     ctx.font = gState.currBottomFontSize + 'px "Lato"';
     //font color
     ctx.fillStyle = gState.currBottomColor;
+    //text alignment
+    ctx.textAlign = gState.currBottomTextAlignment;
     //font text shadow
     if (gState.currBottomTextShadow) {
         ctx.shadowColor = 'black';
@@ -74,7 +69,7 @@ function drawBottomTextOnCanvas() {
     }else{
         ctx.shadowBlur = 0;        
     }
-    ctx.fillText(gState.currBottomText, 200, 320);
+    ctx.fillText(gState.currBottomText, 284, 320);
 }
 
 /**
@@ -114,6 +109,15 @@ function changeTextShadow(textLocation) {
         gState.currTopTextShadow =  !gState.currTopTextShadow;
     } else {
         gState.currBottomTextShadow = !gState.currTopTextShadow;
+    }
+    drawOnCanvas();
+}
+
+function alignText(position, textLocation) {
+    if (textLocation === 'top') {
+        gState.currTopTextAlignment = position;
+    } else {
+        gState.currBottomTextAlignment = position;
     }
     drawOnCanvas();
 }
