@@ -73,6 +73,7 @@ function saveContactLocalStorage() {
     };
     var contactToSave = JSON.stringify(contactForm);
     localStorage.setItem('Contact Info', contactToSave);
+    $('.contact-form__sent').show();
 }
 
 /**

@@ -44,6 +44,7 @@
     color: white;
     background-color: #454545;
     border: 0px solid black;
+    padding: 3px;
 }
 
     ::-webkit-input-placeholder {
@@ -57,9 +58,10 @@
     color: white;
     font-size: rem(12px);
     border: none;
+    cursor: pointer;
 }
 
 .contact-form__send {
-    justify-content: flex-end;
+    align-items: flex-end;
     margin-bottom: em(10px);
 }

@@ -252,8 +252,9 @@
                             <li><input type="text" placeholder="Subject" class="contact-form__field" id="form-subject"></li>
                             <li><textarea rows="8" placeholder="Write your message here..." class="contact-form__field" id="form-txt"></textarea></li>
                         </ul>
-                        <div class="contact-form__send flex">
-                            <button class="contact-form__button" onclick="saveContactLocalStorage(); return false;">Send</button>
+                        <div class="contact-form__send flex flex-col">
+                            <input type="submit" class="contact-form__button" onclick="saveContactLocalStorage(); return false;">
+                            <div class="contact-form__sent" style="display:none">Your input was sent successfully!</div>
                         </div>
                     </form>
                     <div class="contact-info">
