@@ -113,13 +113,17 @@
                                     </button>
                                     </div>
                                     <!--Font Type-->
-                                    <div class="top-text__generator-font-types">
-                                        <select name="fonts">
-                                            <option value="" disabled selected>Choose Font</option>
-                                            <option value="lato">Lato</option>
-                                            <option value="david">David</option>
-                                            <option value="miriam">Miriam</option>
-                                         </select>
+                                    <div class="top-text__generator-font-family">
+                                        <div class="font-dropdown">
+                                            <button onclick="showDropDown('top')" class="dropbtn">
+                                                <i class="fa fa-font" aria-hidden="true"></i>
+                                            </button>
+                                            <div id="top__fontDropDown" class="dropdown-content">
+                                                <a href="#" onclick="changeFontFamily(this , 'top'); return false;">Lato</a>
+                                                <a href="#" onclick="changeFontFamily(this , 'top'); return false;">David</a>
+                                                <a href="#" onclick="changeFontFamily(this , 'top'); return false;">Times New Roman</a>
+                                            </div>
+                                        </div>
                                     </div>
                                     <!-- Text Shadow and color -->
                                     <div class="top-text__generator-font-effect">
@@ -164,13 +168,17 @@
                                     </button>
                                     </div>
                                     <!--Font Type-->
-                                    <div class="bottom-text__generator-font-types">
-                                        <select name="fonts">
-                                            <option value="" disabled selected>Choose Font</option>
-                                            <option value="lato">Lato</option>
-                                            <option value="david">David</option>
-                                            <option value="fiat">Miriam</option>
-                                         </select>
+                                    <div class="bottom-text__generator-font-family">
+                                        <div class="font-dropdown">
+                                            <button onclick="showDropDown('bottom')" class="dropbtn">
+                                                <i class="fa fa-font" aria-hidden="true"></i>
+                                            </button>
+                                            <div id="bottom__fontDropDown" class="dropdown-content">
+                                                <a href="#" onclick="changeFontFamily(this , 'bottom'); return false;">Lato</a>
+                                                <a href="#" onclick="changeFontFamily(this , 'bottom'); return false;">David</a>
+                                                <a href="#" onclick="changeFontFamily(this , 'bottom'); return false;">Times New Roman</a>
+                                            </div>
+                                        </div>
                                     </div>
                                     <!-- Text color and shadow -->
                                     <div class="bottom-text__generator-font-effect">

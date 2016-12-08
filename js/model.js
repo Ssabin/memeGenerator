@@ -82,6 +82,7 @@ function resetState(){
                 y: 50,
                 text: '',
                 textAlignment: 'center',
+                fontFamily: 'Lato',
                 textFontSize: 60,
                 textColor: '#fff',
                 textShadow: false
@@ -91,6 +92,7 @@ function resetState(){
                 y: 320,
                 text: '',
                 textAlignment: 'center',
+                fontFamily: 'Lato',
                 textFontSize: 60,
                 textColor: '#fff',
                 textShadow: false

@@ -92,3 +92,22 @@ function setKeyWordFontSize(keyWordSearchCount, keyWord) {
     var fontSize = calcKeyWordSize(keyWordSearchCount);
     $keyWordDiv.css('font-size', fontSize + 'px');
 }
+
+/**
+ * Empty generator inputs
+ */
+function resetCanvasGeneratorInputs() {
+    $('#topText').val('');
+    $('#bottomText').val('');
+    $('.top-text__color').val('#000000');
+    $('.bottom-text__color').val('#000000');
+}
+
+ 
+/**
+ * Toggle between hiding and showing the dropdown content 
+ */
+function showDropDown(dropDownLocation) {
+    var top = $('#'+ dropDownLocation +'__fontDropDown');
+    top.toggleClass('show');
+}

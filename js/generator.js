@@ -27,6 +27,15 @@ function changeFontColor(fontColorHex, textLocation) {
 }
 
 /**
+ * Set Font Family to text on canvas
+ */
+function changeFontFamily(elFontFamily, textLocation) {
+    console.dir(elFontFamily);
+    gState.labels[textLocation].fontFamily = elFontFamily.innerText;
+    drawOnCanvas();
+}
+
+/**
  * Set Text Shadow to text on canvas
  */
 function changeTextShadow(textLocation) {
@@ -77,15 +86,4 @@ function resetCanvas() {
     gState.currMemeUrl = currUrl;
     resetCanvasGeneratorInputs();
     drawOnCanvas();
-}
-
-
-/**
- * Empty generator inputs
- */
-function resetCanvasGeneratorInputs() {
-    $('#topText').val('');
-    $('#bottomText').val('');
-    $('.top-text__color').val('#000000');
-    $('.bottom-text__color').val('#000000');
 }

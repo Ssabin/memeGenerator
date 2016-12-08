@@ -34,7 +34,7 @@ function drawOnCanvas() {
  */
 function drawTopTextOnCanvas(ctx , textState) {
     //font size    
-    ctx.font = textState.textFontSize + 'px "Lato"';
+    ctx.font = textState.textFontSize + 'px "'+ textState.fontFamily +'"';
     //font color    
     ctx.fillStyle = textState.textColor;
     //text alignment
