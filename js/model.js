@@ -56,7 +56,6 @@ function saveKeywordsLocalStorageFirstTime() {
 }
 
 function saveKeyWordsLocalStorage(keyWord) {
-    // var keyWords = JSON.parse(localStorage.getItem('keyWordsPopularity'));
     if (gKeyWordsPopularity[keyWord.toLowerCase()] >= 0) gKeyWordsPopularity[keyWord.toLowerCase()]++;
     var keyWordsString = JSON.stringify(gKeyWordsPopularity);
     localStorage.setItem('keyWordsPopularity', keyWordsString);

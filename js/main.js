@@ -5,10 +5,9 @@ const MEMES_IMGS = 7;
  * This function will be called when body loads
  */
 function init(){
-    // buildMemes();
     renderMemes(gMemes);
     gKeyWordsPopularity = JSON.parse(localStorage.getItem('keyWordsPopularity'));
-    if (!gKeyWordsPopularity) saveKeyWordsLocalStorageFirstTime(); 
+    if (!gKeyWordsPopularity) saveKeywordsLocalStorageFirstTime(); 
     resetState();
 }
 

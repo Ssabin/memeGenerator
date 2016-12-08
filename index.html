@@ -11,6 +11,7 @@
 <body onload="init()">
     <div class="container">
         <header>
+            <!-- Header Navigation -->
             <nav class="main-nav flex justify-center full-height">
                 <ul class="clean-list main-nav__items flex align-center full-height">
                     <li class="main-nav__item">
@@ -40,14 +41,17 @@
                     </li>
                 </ul>
             </nav>
-<div class="arrow-down"></div>
+            <div class="arrow-down"></div>
         </header>
+        <!-- Meme container -->
         <main class="memes-gallery__container flex flex-col align-center">
+            <!-- Meme Search -->
             <div class="search-meme__container flex flex-col">
                 <div class="search-meme">
                     <h3>Search for meme by keyword</h3>
                     <input type="text" class="search-meme__input" oninput="searchKeyWord(this.value)" />
                 </div>
+                <!-- Popular Keyboards / Change class name? -->
                 <div class="search-keywords align-center">
                     <div onclick="selectKeyWord(this.innerText)" class="search-keywords__keyword">Happy</div>
                     <div onclick="selectKeyWord(this.innerText)" class="search-keywords__keyword">Funny</div>
@@ -60,8 +64,8 @@
                     <div onclick="selectKeyWord(this.innerText)" class="search-keywords__keyword">History</div>
                 </div>
             </div>
-
             <div class="inner-container flex flex-col flex-wrap align-center">
+                <!-- Meme Hexogan preview -->
                 <div class="memes-gallery">
                 </div>
                 <!--Hexogan template-->
@@ -71,52 +75,56 @@
                 </div>
                 <!-- Meme Generator -->
                 <div class="meme-generator flex-col flex space-between" style="display: none;">
+                    <!-- Back to preview -->
                     <button onclick="backToGallery()" class="meme-generator__back">Go Back</button>
                     <div class="meme-generator__container flex flex-col">
-                        <canvas id="canvas"  width="568" height="360" class="meme-generator__canvas">Sorry, no canvas available</canvas>
+                        <canvas id="canvas" width="568" height="360" class="meme-generator__canvas">Sorry, no canvas available</canvas>
+                        <!-- Meme Generator form -->
                         <div class="meme-edit__form flex flex-col">
-
+                            <!-- Top Text form -->
                             <div class="top-text__generator flex flex-col align-center">
                                 <label for="topText">Top Text</label>
                                 <input type="text" class="topText" id="topText" oninput="writeTextOnMeme()" />
 
                                 <div class="top-text__generator-features flex">
+                                    <!-- Text Alignments -->
                                     <div class="top-text__generator-aligns">
                                         <button class="top-text__align-right">
-                                        <i class="fa fa-align-right" aria-hidden="true"></i>
-                                    </button>
+                                            <i class="fa fa-align-right" aria-hidden="true"></i>
+                                        </button>
                                         <button class="top-text__align-justify">
-                                        <i class="fa fa-align-center" aria-hidden="true"></i>
-                                    </button>
+                                            <i class="fa fa-align-center" aria-hidden="true"></i>
+                                        </button>
                                         <button class="top-text__align-left">
-                                        <i class="fa fa-align-left" aria-hidden="true"></i>
-                                    </button>
+                                            <i class="fa fa-align-left" aria-hidden="true"></i>
+                                        </button>
                                     </div>
-
+                                    <!-- Text Font Size -->
                                     <div class="top-text__generator-font-sizes">
-                                        <button class="top-text__increase-font-size" onclick="changeFontSize(5 , 'top'); return false;">
+                                        <button class="top-text__increase-font-size" onclick="changeFontSize(5 , 'top');">
                                         <i class="fa fa-plus" aria-hidden="true" ></i>
                                     </button>
-                                        <button class="top-text__decrease-font-size" onclick="changeFontSize(-5 , 'top'); return false;">
+                                        <button class="top-text__decrease-font-size" onclick="changeFontSize(-5 , 'top');">
                                         <i class="fa fa-minus" aria-hidden="true"></i>
                                     </button>
                                     </div>
-
+                                    <!-- Text Shadow and color -->
                                     <div class="top-text__generator-font-effect">
                                         <input type="color" class="top-text__color" oninput="changeFontColor(this.value , 'top')">
                                         <!--<i class="fa fa-tint" aria-hidden="true"></i>-->
-                                    </input>
+                                        </input>
                                         <button class="top-text__shadow" onclick="changeTextShadow('top')">
                                         <i class="fa fa-adjust" aria-hidden="true"></i>
                                     </button>
                                     </div>
                                 </div>
                             </div>
-
+                            <!-- Bottom Text form -->
                             <div class="bottom-text__generator flex flex-col align-center">
                                 <label for="bottomText">Bottom Text</label>
                                 <input type="text" class="bottomText" id="bottomText" oninput="writeTextOnMeme()" />
                                 <div class="bottom-text__generator-features flex">
+                                    <!-- Text Alignments -->
                                     <div class="bottom-text__generator-aligns">
                                         <button class="bottom-text__align-right">
                                         <i class="fa fa-align-right" aria-hidden="true"></i>
@@ -128,20 +136,20 @@
                                         <i class="fa fa-align-left" aria-hidden="true"></i>
                                     </button>
                                     </div>
-
+                                    <!-- Text Sizes -->
                                     <div class="bottom-text__generator-font-sizes">
-                                        <button class="bottom-text__increase-font-size" onclick="changeFontSize(5 , 'bottom'); return false;">
+                                        <button class="bottom-text__increase-font-size" onclick="changeFontSize(5 , 'bottom');">
                                         <i class="fa fa-plus" aria-hidden="true"></i>
                                     </button>
-                                        <button class="bottom-text__decrease-font-size" onclick="changeFontSize(-5 , 'bottom'); return false;">
+                                        <button class="bottom-text__decrease-font-size" onclick="changeFontSize(-5 , 'bottom');">
                                         <i class="fa fa-minus" aria-hidden="true"></i>
                                     </button>
                                     </div>
-
+                                    <!-- Text color and shadow -->
                                     <div class="bottom-text__generator-font-effect">
                                         <input type="color" class="bottom-text__color" oninput="changeFontColor(this.value , 'bottom')">
                                         <!--<i class="fa fa-tint" aria-hidden="true"></i>-->
-                                    </input>
+                                        </input>
                                         <button class="bottom-text__shadow" onclick="changeTextShadow('bottom')">
                                         <i class="fa fa-adjust" aria-hidden="true"></i>
                                     </button>
@@ -161,32 +169,38 @@
                         <img src="assets\imgs\memes\2.jpg" class="developer-img img-responsive" />
                     </div>-->
                     <div class="developer-pic developer_1 hexagon">
-                        <div class="face1"></div>
-                        <div class="face2"></div>
+                            <div class="face1"></div>
+                            <div class="face2"></div>
                     </div>
                     <div class="developer-story">
                         <div class="developer-name">
-                            HAIM
+                            Sahar Sabin
                         </div>
                         <div class="developer-title">
-                            President
+                            Front-end Programmer
                         </div>
-                        <div class="developer-bio">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae quas at rem quibusdam facere
-                            omnis, beatae nemo hic dicta commodi consectetur magnam sapiente quisquam, eum enim, vel facilis
-                            iure optio.
+                        <div class="developer-bio">
+                            I’m a Front end developer with experience in implementing a wide range of Web Application. <br/> 
+                            I am passionate about new technologies and applying them to find creative and elegant solutions. <br/> 
+                            HTML5, CSS , CSS3 ,JQuery ,Vue.js , Responsive sites, CMS(Wordpress).
                         </div>
                         <div class="developer-socialmedia__icons">
-                            <i class="fa fa-linkedin-square" aria-hidden="true"></i>
-                            <i class="fa fa-facebook-square" aria-hidden="true"></i>
-                            <i class="fa fa-twitter-square" aria-hidden="true"></i>
-                            <i class="fa fa-phone-square" aria-hidden="true"></i>
+                            <a href="http://linkedin.com/in/saharSabin">
+                                <i class="fa fa-linkedin-square" aria-hidden="true"></i>
+                            </a>
+                            <a href="https://www.facebook.com/sahar.sabin.1">
+                                <i class="fa fa-facebook-square" aria-hidden="true"></i>
+                            </a>
+                            <a href="https://twitter.com/SaharSabin14">
+                                <i class="fa fa-twitter-square" aria-hidden="true"></i>
+                            </a>
+                            <a href="tel:054-544-80-94">
+                                <i class="fa fa-phone-square" aria-hidden="true"></i>
+                            </a>
                         </div>
                     </div>
                 </div>
                 <div class="developer flex flex-col align-center">
-                    <!--<div class="developer-pic flex justify-center">
-                        <img src="assets\imgs\memes\2.jpg" class="developer-img img-responsive" />
-                    </div>-->
                     <div class="developer-pic developer_2 hexagon">
                         <div class="face1"></div>
                         <div class="face2"></div>
@@ -241,7 +255,7 @@
             </div>
         </div>
         <footer>
-            © Copyright 2013 by PSDchat
+            © Copyright 2016 by Itai & Sahar
         </footer>
     </div>
     <script src="node_modules/jquery/dist/jquery.min.js"></script>

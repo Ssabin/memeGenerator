@@ -17,10 +17,10 @@ function initCanvas() {
  */
 function drawOnCanvas() {
     drawImgOnCanvas();
-    setTimeout(function () {
-        drawTopTextOnCanvas();
-        drawBottomTextOnCanvas();
-    }, 100);
+    // setTimeout(function () {
+    //     drawTopTextOnCanvas();
+    //     drawBottomTextOnCanvas();
+    // }, 100);
 }
 
 /**
@@ -32,6 +32,8 @@ function drawImgOnCanvas() {
     img.src = gState.currMemeUrl;
     img.onload = function () {
         ctx.drawImage(img, 0, 0, 568, 360);
+        drawTopTextOnCanvas();
+        drawBottomTextOnCanvas();
     };
 }
 

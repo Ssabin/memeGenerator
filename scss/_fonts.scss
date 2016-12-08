@@ -23,4 +23,12 @@
   font-weight: 400;
 }
 
+/*----------  Maven Font  ----------*/
+
+@font-face {
+  font-family: 'Maven Regular';
+  src: url('../assets/fonts/MavenPro/MavenPro-Regular.ttf');
+  font-weight: 400;
+}
+
 $fa-font-path:   "../node_modules/font-awesome/fonts";
