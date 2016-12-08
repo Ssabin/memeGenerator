@@ -6,9 +6,10 @@
 
 function renderMemes(memes) {
     var $memesGallery__memes = $('.memes-gallery');
+    var $memesGalleryTemplate = $('.memes-gallery__meme-template');
     $memesGallery__memes.empty();
     memes.forEach(function (meme) {
-        var $clone = $('.memes-gallery__meme-template').clone();
+        var $clone = $memesGalleryTemplate.clone();
         $clone.attr('class', 'memes-gallery__meme hexagon');
         $clone.css('background-image', 'url(assets/imgs/memes/' + meme.id + '.jpg)');
         $clone.on('click', function () {
@@ -29,20 +30,18 @@ function showGenerator(memeUrl) {
     $memeGenerator.toggle();
     $gallery.slideToggle();
     gState.currMemeUrl = memeUrl;
-    initCanvas();
+    drawOnCanvas();
 }
 
 /**
- * Return button to gallery...
+ * Toggles preview back
  */
 
 function backToGallery() {
     var $memeGenerator = $('.meme-generator');
     var $gallery = $('.memes-gallery');
     $memeGenerator.toggle();
-    $memeGenerator.find('img').attr('src', '');
-    $memeGenerator.find('#topText').val('');
-    $memeGenerator.find('#bottomText').val('');
+    resetCanvasGeneratorInputs();
     resetState();
     $gallery.toggle();
 }

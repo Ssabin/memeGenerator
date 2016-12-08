@@ -1,5 +1,5 @@
 'use strict';
-const MEMES_IMGS = 7;
+const MEMES_IMGS_PREVIEW_COUNT = 7;
 const BASIC_FONTSIZE = 16;
 const HEADER_SIZE = 83;
 
@@ -12,6 +12,7 @@ function init() {
     gKeyWordsPopularity = JSON.parse(localStorage.getItem('keyWordsPopularity'));
     if (!gKeyWordsPopularity) saveKeywordsLocalStorageFirstTime();
     renderKeyWords();
+    initCanvas();
     setAnchorsAnimations();
     resetState();
 }

@@ -10,8 +10,8 @@ function initCanvas() {
     ctx = canvas.getContext('2d');
     gElTopTextBox = document.querySelector('#topText');
     gElBottomTextBox = document.querySelector('#bottomText');
-    drawOnCanvas();
 }
+
 /**
  * This function will draw the img and triggers 2 functions which draw texts on the canvas
  */
@@ -22,121 +22,28 @@ function drawOnCanvas() {
     img.src = gState.currMemeUrl;
     img.onload = function() {
         ctx.drawImage(img, 0, 0, 568, 360);
-        drawTopTextOnCanvas();
-        drawBottomTextOnCanvas();
+        drawTopTextOnCanvas(ctx , gState.labels['top']);
+        drawTopTextOnCanvas(ctx , gState.labels['bottom']);
     };
 }
 
 /**
- * Draws top text on function 
+ * Draws text with props set in his state 
  */
-function drawTopTextOnCanvas() {
+function drawTopTextOnCanvas(ctx , textState) {
     //font size    
-    ctx.font = gState.currTopFontSize + 'px "Lato"';
+    ctx.font = textState.textFontSize + 'px "Lato"';
     //font color    
-    ctx.fillStyle = gState.currTopColor;
+    ctx.fillStyle = textState.textColor;
     //text alignment
-    ctx.textAlign = gState.currTopTextAlignment;
-    //font text shadow    
-    if (gState.currTopTextShadow) {
+    ctx.textAlign = textState.textAlignment;
+    // //font text shadow    
+    if (textState.textShadow) {
         ctx.shadowColor = 'black';
         ctx.shadowOffsetX = 0;
         ctx.shadowOffsetY = 0;
         ctx.shadowBlur = 10;
     }
-    ctx.fillText(gState.currTopText, 284, 50);
+    ctx.fillText(textState.text, textState.x, textState.y);
     ctx.shadowBlur = 0;
 }
-
-/**
- * Draws bottom text on function 
- */
-
-function drawBottomTextOnCanvas() {
-    //font size
-    ctx.font = gState.currBottomFontSize + 'px "Lato"';
-    //font color
-    ctx.fillStyle = gState.currBottomColor;
-    //text alignment
-    ctx.textAlign = gState.currBottomTextAlignment;
-    //font text shadow
-    if (gState.currBottomTextShadow) {
-        ctx.shadowColor = 'black';
-        ctx.shadowOffsetX = 0;
-        ctx.shadowOffsetY = 0;
-        ctx.shadowBlur = 10;
-    } else {
-        ctx.shadowBlur = 0;
-    }
-    ctx.fillText(gState.currBottomText, 284, 320);
-}
-
-/**
- * This function is called whenever input on Generator form is changes
- */
-function writeTextOnMeme() {
-    gState.currBottomText = gElBottomTextBox ? gElBottomTextBox.value : '';
-    gState.currTopText = gElTopTextBox ? gElTopTextBox.value : '';
-    ctx.clearRect(0, 0, 568, 360);
-    drawOnCanvas();
-}
-
-/**
- * This function is triggred when user incease or decrease font size
- */
-
-function changeFontSize(fontSizeValue, textLocation) {
-    if (textLocation === 'top') {
-        gState.currTopFontSize += fontSizeValue;
-    } else {
-        gState.currBottomFontSize += fontSizeValue;
-    }
-    drawOnCanvas();
-}
-
-function changeFontColor(fontColorHex, textLocation) {
-    if (textLocation === 'top') {
-        gState.currTopColor = fontColorHex;
-    } else {
-        gState.currBottomColor = fontColorHex;
-    }
-    drawOnCanvas();
-}
-
-function changeTextShadow(textLocation) {
-    if (textLocation === 'top') {
-        gState.currTopTextShadow = !gState.currTopTextShadow;
-    } else {
-        gState.currBottomTextShadow = !gState.currBottomTextShadow;
-    }
-    drawOnCanvas();
-}
-
-function alignText(position, textLocation) {
-    if (textLocation === 'top') {
-        gState.currTopTextAlignment = position;
-    } else {
-        gState.currBottomTextAlignment = position;
-    }
-    drawOnCanvas();
-}
-
-function downloadImg(elLink) {
-    elLink.href = canvas.toDataURL();
-    elLink.download = 'perfectMeme.jpg';
-}
-
-function resetCanvas() {
-    var currUrl = gState.currMemeUrl;
-    resetState();
-    gState.currMemeUrl = currUrl;
-    $('#topText').val('');
-    $('#bottomText').val('');
-    drawOnCanvas();
-}
-
-// function changeText(textLocation , value , action){
-//     switch('action'){
-//         case 'changeFontSize': 
-//     }
-// }

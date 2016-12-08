@@ -61,52 +61,31 @@ function saveKeyWordsLocalStorage(keyWord) {
     localStorage.setItem('keyWordsPopularity', keyWordsString);
 }
 
+/**
+ * Resets state to default values
+ */
 function resetState(){
     gState = {
         currMemeUrl: '',
-        currTopText: '',
-        currBottomText: '',
-        currTopTextAlignment: 'center',
-        currBottomTextAlignment: 'center',
-        currTopFontSize: 60,
-        currBottomFontSize: 60,
-        currTopColor: 'white',
-        currBottomColor: 'white',
-        currTopTextShadow: false,
-        currBottomTextShadow: false
+        labels: {
+            'top': {
+                x: 284,
+                y: 50,
+                text: '',
+                textAlignment: 'center',
+                textFontSize: 60,
+                textColor: '#fff',
+                textShadow: false
+            },
+            'bottom':{
+                x: 284,
+                y: 320,
+                text: '',
+                textAlignment: 'center',
+                textFontSize: 60,
+                textColor: '#fff',
+                textShadow: false
+            }
+        }
     };
 }
-
-// ,
-//     {
-//         id: 8,
-//         url: '../assets/imgs/memes/8.jpg',
-//         keywords: ['happy' , 'funny']
-//     },
-//     {
-//         id: 9,
-//         url: '../assets/imgs/memes/9.jpg',
-//         keywords: ['halirious' , 'cheering']
-//     },
-//     {
-//         id: 10,
-//         url: '../assets/imgs/memes/10.jpg',
-//         keywords: ['history' , 'romans']
-//     },
-
-
-/**
- * Builds model 
- */
-// function buildMemes(){
-//     var keywords = ['happy' , 'funny' , 'sad' , 'smart' , 'inspiring']
-//     gMemes = [];
-//     for (var i = 1; i <= MEMES_IMGS; i++) {
-//         var meme = {
-//             id: i,
-//             url: '../assets/imgs/memes/'+ i +'.jpg',
-//             keywords: [keywords[getRandomInt(0, keywords.length-1)]]
-//         };
-//         gMemes.push(meme);
-//     }
-// }
