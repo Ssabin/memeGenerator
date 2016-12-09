@@ -15,12 +15,12 @@
             <nav class="main-nav flex justify-center full-height">
                 <ul class="clean-list main-nav__items flex align-center full-height">
                     <li class="main-nav__item">
-                        <a href="#memes-search">
+                        <a href="#memes-search" class="main-nav__link">
                             Search
                     </a>
                     </li>
                     <li class="main-nav__item">
-                        <a href="#memes-gallery">
+                        <a href="#memes-gallery" class="main-nav__link">
                             Memes
                         </a>
                     </li>
@@ -30,12 +30,12 @@
                         </a>
                     </li>
                     <li class="main-nav__item">
-                        <a href="#about">
+                        <a href="#about" class="main-nav__link">
                             About
                         </a>
                     </li>
                     <li class="main-nav__item">
-                        <a href="#contact">
+                        <a href="#contact" class="main-nav__link">
                             Contact
                         </a>
                     </li>
@@ -49,7 +49,11 @@
             <div id="memes-search" class="search-meme__container flex flex-col align-center">
                 <div class="search-meme flex flex-col">
                     <h3>Search for meme by keyword</h3>
-                    <input type="text" class="search-meme__input" oninput="searchKeyWord(this.value)" />
+                    <div class="flex space-between">
+                        <input type="text" class="search-meme__input" oninput="searchKeyWord(this.value)" placeholder="Write meme key word"/>
+                        <i class="fa fa-times-circle-o search-meme__submit" aria-hidden="true" onclick="cleanSearchKeyWord()"></i>
+                        <i class="fa fa-search search-meme__submit" aria-hidden="true" onclick="searchKeyWord()"></i>
+                    </div>
                 </div>
                 <!-- Popular Keyboards / Change class name? -->
                 <div class="search-keywords flex flex-wrap space-between">
@@ -77,132 +81,125 @@
                         <div class="memes-gallery__keywords" style="display: none;"></div>
                     </div>
                 </div>
-                <!-- Meme Generator -->
-                <div class="meme-generator flex-col flex space-between" style="display: none;">
-                    <!-- Back to preview -->
-                    <button onclick="backToGallery()" class="meme-generator__button">Go Back</button>
-                    <div class="meme-generator__container flex flex-col align-center">
-                        <canvas id="canvas" width="568" height="360" class="meme-generator__canvas">Sorry, no canvas available</canvas>
-                        <!-- Meme Generator form -->
-                        <div class="meme-edit__form flex flex-col">
-                            <!-- Top Text form -->
-                            <div class="top-text__generator flex flex-col align-center">
-                                <label for="topText">Top Text</label>
-                                <input type="text" class="topText" id="topText" oninput="writeTextOnMeme()" />
+            </div>
+            <!-- Meme Generator -->
+            <div class="meme-generator flex-col flex space-between" style="display: none;">
+                <!-- Back to preview -->
+                <button onclick="backToGallery()" class="meme-generator__button">Go Back</button>
+                <div class="meme-generator__container flex flex-col align-center">
+                    <canvas id="canvas" width="568" height="360" class="meme-generator__canvas">Sorry, no canvas available</canvas>
+                    <!-- Meme Generator form -->
+                    <div class="meme-edit__form flex flex-col">
+                        <!-- Top Text form -->
+                        <div class="top-text__generator flex flex-col align-center">
+                            <label for="topText">Top Text</label>
+                            <input type="text" class="topText generator-text__input" id="topText" oninput="writeTextOnMeme()" />
 
-                                <div class="top-text__generator-features flex">
-                                    <!-- Text Alignments -->
-                                    <div class="top-text__generator-aligns">
-                                        <button class="top-text__align-left" onclick="alignText('right' , 'top')">
+                            <div class="top-text__generator-features flex">
+                                <!-- Text Alignments -->
+                                <div class="top-text__generator-aligns">
+                                    <button class="top-text__align-left" onclick="alignText('right' , 'top')">
                                             <i class="fa fa-align-left" aria-hidden="true"></i>
                                         </button>
-                                        <button class="top-text__align-justify" onclick="alignText('center' , 'top')">
+                                    <button class="top-text__align-justify" onclick="alignText('center' , 'top')">
                                             <i class="fa fa-align-center" aria-hidden="true"></i>
                                         </button>
-                                        <button class="top-text__align-right" onclick="alignText('left' , 'top')">
+                                    <button class="top-text__align-right" onclick="alignText('left' , 'top')">
                                             <i class="fa fa-align-right" aria-hidden="true"></i>
                                         </button>
-                                    </div>
-                                    <!-- Text Font Size -->
-                                    <div class="top-text__generator-font-sizes">
-                                        <button class="top-text__increase-font-size" onclick="changeFontSize(5 , 'top');">
+                                </div>
+                                <!-- Text Font Size -->
+                                <div class="top-text__generator-font-sizes">
+                                    <button class="top-text__increase-font-size" onclick="changeFontSize(5 , 'top');">
                                         <i class="fa fa-plus" aria-hidden="true" ></i>
                                     </button>
-                                        <button class="top-text__decrease-font-size" onclick="changeFontSize(-5 , 'top');">
+                                    <button class="top-text__decrease-font-size" onclick="changeFontSize(-5 , 'top');">
                                         <i class="fa fa-minus" aria-hidden="true"></i>
                                     </button>
-                                    </div>
-                                    <!--Font Type-->
-                                    <div class="top-text__generator-font-family">
-                                        <div class="font-dropdown">
-                                            <button onclick="showDropDown('top')" class="dropbtn">
-                                                <i class="fa fa-font" aria-hidden="true"></i>
-                                            </button>
-                                            <div id="top__fontDropDown" class="dropdown-content">
-                                                <a href="#" onclick="changeFontFamily(this , 'top'); return false;">Lato</a>
-                                                <a href="#" onclick="changeFontFamily(this , 'top'); return false;">David</a>
-                                                <a href="#" onclick="changeFontFamily(this , 'top'); return false;">Times New Roman</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- Text Shadow and color -->
-                                    <div class="top-text__generator-font-effect">
-                                        <input type="color" class="top-text__color" oninput="changeFontColor(this.value , 'top')">
-
-                                        </input>
-                                        <button class="top-text__shadow" onclick="changeTextShadow('top')">
+                                </div>
+                                <!-- Text Shadow, Color and Font family-->
+                                <div class="top-text__generator-font-effect">
+                                    <input type="color" class="top-text__color text__color" oninput="changeFontColor(this.value , 'top')">
+                                    </input>
+                                    <button class="top-text__shadow" onclick="changeTextShadow('top')">
                                             <i class="fa fa-adjust" aria-hidden="true"></i>
                                         </button>
-                                    </div>
-                                    <div class="top-text__generator-empty">
-                                        <button class="top-text__empty" onclick="resetText('top')">
-                                            <i class="fa fa-trash" aria-hidden="true"></i>
-                                        </button>
+                                    <div class="font-dropdown">
+                                        <button onclick="showDropDown('top')" class="dropbtn">
+                                                <i class="fa fa-font" aria-hidden="true"></i>
+                                            </button>
+                                        <div id="top__fontDropDown" class="dropdown-content">
+                                            <a href="#" onclick="changeFontFamily(this , 'top'); return false;">Lato</a>
+                                            <a href="#" onclick="changeFontFamily(this , 'top'); return false;">David</a>
+                                            <a href="#" onclick="changeFontFamily(this , 'top'); return false;">Times New Roman</a>
+                                        </div>
                                     </div>
                                 </div>
+                                <div class="top-text__generator-empty">
+                                    <button class="top-text__empty" onclick="resetText('top')">
+                                            <i class="fa fa-trash" aria-hidden="true"></i>
+                                        </button>
+                                </div>
                             </div>
-                            <!-- Bottom Text form -->
-                            <div class="bottom-text__generator flex flex-col align-center">
-                                <label for="bottomText">Bottom Text</label>
-                                <input type="text" class="bottomText" id="bottomText" oninput="writeTextOnMeme()" />
-                                <div class="bottom-text__generator-features flex">
-                                    <!-- Text Alignments -->
-                                    <div class="bottom-text__generator-aligns">
-                                        <button class="bottom-text__align-left" onclick="alignText('right' , 'bottom')">
+                        </div>
+                        <!-- Bottom Text form -->
+                        <div class="bottom-text__generator flex flex-col align-center">
+                            <label for="bottomText">Bottom Text</label>
+                            <input type="text" class="bottomText generator-text__input" id="bottomText" oninput="writeTextOnMeme()" />
+                            <div class="bottom-text__generator-features flex">
+                                <!-- Text Alignments -->
+                                <div class="bottom-text__generator-aligns">
+                                    <button class="bottom-text__align-left" onclick="alignText('right' , 'bottom')">
                                         <i class="fa fa-align-left" aria-hidden="true"></i>
                                     </button>
-                                        <button class="bottom-text__align-justify" onclick="alignText( 'center' , 'bottom') ">
+                                    <button class="bottom-text__align-justify" onclick="alignText( 'center' , 'bottom') ">
                                         <i class="fa fa-align-center " aria-hidden="true "></i>
                                     </button>
-                                        <button class="bottom-text__align-right" onclick="alignText('left' , 'bottom')">
+                                    <button class="bottom-text__align-right" onclick="alignText('left' , 'bottom')">
                                         <i class="fa fa-align-right" aria-hidden="true"></i>
                                         </button>
-                                    </div>
-                                    <!-- Text Sizes -->
-                                    <div class="bottom-text__generator-font-sizes">
-                                        <button class="bottom-text__increase-font-size" onclick="changeFontSize(5 , 'bottom');">
+                                </div>
+                                <!-- Text Sizes -->
+                                <div class="bottom-text__generator-font-sizes">
+                                    <button class="bottom-text__increase-font-size" onclick="changeFontSize(5 , 'bottom');">
                                         <i class="fa fa-plus" aria-hidden="true"></i>
                                     </button>
-                                        <button class="bottom-text__decrease-font-size" onclick="changeFontSize(-5 , 'bottom');">
+                                    <button class="bottom-text__decrease-font-size" onclick="changeFontSize(-5 , 'bottom');">
                                         <i class="fa fa-minus" aria-hidden="true"></i>
                                     </button>
-                                    </div>
-                                    <!--Font Type-->
-                                    <div class="bottom-text__generator-font-family">
-                                        <div class="font-dropdown">
-                                            <button onclick="showDropDown('bottom')" class="dropbtn">
-                                                <i class="fa fa-font" aria-hidden="true"></i>
-                                            </button>
-                                            <div id="bottom__fontDropDown" class="dropdown-content">
-                                                <a href="#" onclick="changeFontFamily(this , 'bottom'); return false;">Lato</a>
-                                                <a href="#" onclick="changeFontFamily(this , 'bottom'); return false;">David</a>
-                                                <a href="#" onclick="changeFontFamily(this , 'bottom'); return false;">Times New Roman</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- Text color and shadow -->
-                                    <div class="bottom-text__generator-font-effect">
-                                        <input type="color" class="bottom-text__color" oninput="changeFontColor(this.value , 'bottom')">
-                                        <!--<i class="fa fa-tint" aria-hidden="true"></i>-->
-                                        </input>
-                                        <button class="bottom-text__shadow" onclick="changeTextShadow('bottom')">
+                                </div>
+                                <!-- Text Shadow, Color and Font family-->
+                                <div class="bottom-text__generator-font-effect">
+                                    <input type="color" class="bottom-text__color text__color" oninput="changeFontColor(this.value , 'bottom')">
+                                    <!--<i class="fa fa-tint" aria-hidden="true"></i>-->
+                                    </input>
+                                    <button class="bottom-text__shadow" onclick="changeTextShadow('bottom')">
                                             <i class="fa fa-adjust" aria-hidden="true"></i>
                                          </button>
-                                    </div>
-                                    <div class="bottom-text__generator-empty">
-                                        <button class="bottom-text__empty" onclick="resetText('bottom')">
-                                            <i class="fa fa-trash" aria-hidden="true"></i>
-                                        </button>
+                                    <div class="font-dropdown">
+                                        <button onclick="showDropDown('bottom')" class="dropbtn">
+                                                <i class="fa fa-font" aria-hidden="true"></i>
+                                            </button>
+                                        <div id="bottom__fontDropDown" class="dropdown-content">
+                                            <a href="#" onclick="changeFontFamily(this , 'bottom'); return false;">Lato</a>
+                                            <a href="#" onclick="changeFontFamily(this , 'bottom'); return false;">David</a>
+                                            <a href="#" onclick="changeFontFamily(this , 'bottom'); return false;">Times New Roman</a>
+                                        </div>
                                     </div>
                                 </div>
+                                <div class="bottom-text__generator-empty">
+                                    <button class="bottom-text__empty" onclick="resetText('bottom')">
+                                            <i class="fa fa-trash" aria-hidden="true"></i>
+                                        </button>
+                                </div>
                             </div>
-                            <div class="meme-generator__buttons">
-                                <a id="download" onclick="downloadMeme(this)">
-                                    <button class="meme-generator__button">Download</button>
-                                </a>
-                                <button class="meme-generator__button" onclick="resetCanvas()">Reset</button>
-                                <!--<input type="submit" id="enter-text" onclick="return false;">-->
-                            </div>
+                        </div>
+                        <div class="meme-generator__buttons">
+                            <a id="download" onclick="downloadMeme(this)">
+                                <button class="meme-generator__button">Download</button>
+                            </a>
+                            <button class="meme-generator__button" onclick="resetCanvas()">Reset</button>
+                            <!--<input type="submit" id="enter-text" onclick="return false;">-->
                         </div>
                     </div>
                 </div>
@@ -260,10 +257,9 @@
                         </div>
 
                         <div class="developer-bio">
-                            The best way to describe myself is this: <br/>
-                            <br/>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A et voluptatum deserunt eius
-                            tempore a rchitecto provident quam autem quia fugit veniam totam, deleniti quaerat iusto eveniet
-                            quasi. Libero, aliquam et!
+                            The best way to describe myself is this: <br/> Lorem ipsum dolor sit amet, consectetur adipisicing
+                            elit. A et voluptatum deserunt eius tempore a rchitecto provident quam autem quia fugit veniam
+                            totam, deleniti quaerat iusto eveniet quasi. Libero, aliquam et!
                         </div>
                         <div class="developer-socialmedia__icons">
                             <a href="https://il.linkedin.com/in/itai-kushmar-15574b122">

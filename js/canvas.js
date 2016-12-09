@@ -16,10 +16,10 @@ function initCanvas() {
 }
 
 /**
- * Draw the img and triggers 2 functions which draw texts on the canvas
+ * Draw the img and execute 2 functions which draw texts on the canvas
  */
 function drawOnCanvas() {
-    ctx.clearRect(0, 0, 568, 360);
+    // ctx.clearRect(0, 0, 568, 360);
     var img = new Image();
     img.src = gState.currMemeUrl;
     img.onload = function() {

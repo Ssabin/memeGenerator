@@ -8,9 +8,6 @@
     background-color: #323232;
 }
 
-// .main-nav__items{
-
-// }
 
 .main-nav__item{
     &:not(:last-child){
@@ -19,10 +16,10 @@
 }
 
 .active{
-    color: #2eac93 !important;
+    color: #2eac93;
 }
 
-.main-nav__item a{
+.main-nav__item .main-nav__link{
     color: #efefef;
     font-size: rem(12px);
     transition: all 0.5s ease;

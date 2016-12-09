@@ -25,7 +25,7 @@ function renderMemes(memes) {
  */
 
 function toggleMemesList() {
-    $('.memes-gallery__keywords').toggle();
+    $('.memes-gallery__keywords').toggle('slow');
     $('.memes-gallery').toggleClass('memes-gallery__list');
     $('.memes-gallery__meme').toggleClass('memes-gallery__meme-list');
     var $iconDisplay = $('.memes-display').find('i');
@@ -46,7 +46,7 @@ function showGenerator(memeUrl) {
     var $memeGenerator = $('.meme-generator');
     var $gallery = $('.memes-gallery');
     $memeGenerator.toggle();
-    $gallery.slideToggle();
+    $gallery.toggle('slow');
     gState.currMemeUrl = memeUrl;
     drawOnCanvas();
 }
@@ -61,7 +61,7 @@ function backToGallery() {
     $memeGenerator.toggle();
     resetCanvasGeneratorInputs();
     resetState();
-    $gallery.toggle();
+    $gallery.fadeToggle('slow');
 }
 
 /**
@@ -75,6 +75,7 @@ function renderKeyWords() {
         $keyWordDiv.text(keyWord);
         $keyWordDiv.addClass('search-keywords__keyword ' + keyWord);
         $keyWordDiv.on('click', function (e) {
+            $('.search-meme__input').val(e.currentTarget.innerText);
             selectKeyWord(e.currentTarget.innerText);
         });
         $searchKeyWords.append($keyWordDiv);
@@ -97,10 +98,9 @@ function setKeyWordFontSize(keyWordSearchCount, keyWord) {
  * Empty generator inputs
  */
 function resetCanvasGeneratorInputs() {
-    $('#topText').val('');
-    $('#bottomText').val('');
-    $('.top-text__color').val('#000000');
-    $('.bottom-text__color').val('#000000');
+    $('.generator-text__input').val('');
+    $('.text__color').val('#000000');
+    $('.dropdown-content').removeClass('show');
 }
 
  
@@ -108,6 +108,18 @@ function resetCanvasGeneratorInputs() {
  * Toggle between hiding and showing the dropdown content 
  */
 function showDropDown(dropDownLocation) {
-    var top = $('#'+ dropDownLocation +'__fontDropDown');
-    top.toggleClass('show');
+    var $dropDown = $('#'+ dropDownLocation +'__fontDropDown');
+    $dropDown.toggleClass('show');
+}
+
+/**
+ * Clean search input
+ */
+function cleanSearchKeyWord(){
+    var $searchInput = $('.search-meme__input');
+    //When input is empty no need to continue
+    if($searchInput.val() === '') return;
+    
+    $searchInput.val('');
+    renderMemes(gMemes);
 }

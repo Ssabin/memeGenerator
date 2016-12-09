@@ -44,12 +44,12 @@
     color: white;
     background-color: #454545;
     border: 0px solid black;
-    padding: 3px;
+    padding: em(10px);
 }
 
-    ::-webkit-input-placeholder {
+::-webkit-input-placeholder {
     color: #bebebe;
-    }
+}
 
 .contact-form__button {
     width: em(90px);

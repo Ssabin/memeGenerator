@@ -6,7 +6,7 @@
 function writeTextOnMeme() {
     gState.labels['top'].text = gElTopTextBox ? gElTopTextBox.value : '';
     gState.labels['bottom'].text = gElBottomTextBox ? gElBottomTextBox.value : '';
-    ctx.clearRect(0, 0, 568, 360);
+    // ctx.clearRect(0, 0, 568, 360);
     drawOnCanvas();
 }
 
@@ -68,12 +68,14 @@ function resetText(textLocation) {
         y: gState.labels[textLocation].y,
         text: '',
         textAlignment: 'center',
+        fontFamily: 'Lato',
         textFontSize: 60,
         textColor: '#fff',
         textShadow: false
     }
-    $('#topText').val('');
-    $('.top-text__color').val('#000000');    
+    $('#'+ textLocation +'Text').val('');
+    $('.'+ textLocation +'-text__color').val('#000000');
+    $('#'+ textLocation +'__fontDropDown').removeClass('show');
     drawOnCanvas();    
 }
 

@@ -40,11 +40,14 @@
     max-width: 100%;
 }
 
-// .meme-generator__container{
-// @include from-tablet-only{
-//     flex-direction: row;
-//     }
-// }
+.meme-generator__container{
+    padding: em(10px);
+    @include from-tablet-only{
+        flex-direction: row;
+        justify-content: center;
+        align-self: center;        
+    }
+}
 
 .meme-generator .meme-generator__meme{
     width: 100%;
@@ -52,19 +55,20 @@
 } 
 
 .meme-edit__form{
+    max-width: 100%;
     width: 100%;
+    align-self: flex-start;    
     align-items: center;
 }
 
 // search container
 .meme-generator__canvas{
-    // border: 1px solid black;
     @include from-tablet-only{
         --canvas__margin-right: em(15px);
         margin-right: var(--canvas__margin-right);
         width: calc(100% - var(--canvas__margin-right));
     }
-    max-width: 80%;
+    max-width: 100%;
 }
 
 .topText , .bottomText{
@@ -128,6 +132,7 @@
 .search-keywords__keyword{
     //didnt work well with rem
     font-size: 16px;
+    cursor: pointer;
 }
 
 .memes-gallery__keywords {
