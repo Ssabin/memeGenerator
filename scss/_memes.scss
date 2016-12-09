@@ -124,9 +124,10 @@
 
 
 .search-keywords {
-    max-width: 35%;
-    //     margin-left: em(50px);
-    // }        
+    max-width: 80%;
+    @include from-mobile-only{
+        max-width: 25%;    
+    }    
 }
 
 .search-keywords__keyword{

@@ -48,21 +48,25 @@
             <!-- Meme Search -->
             <div id="memes-search" class="search-meme__container flex flex-col align-center">
                 <div class="search-meme flex flex-col">
-                    <h3>Search for meme by keyword</h3>
+                    <h3>Search for Meme by keyword</h3>
                     <div class="flex space-between">
-                        <input type="text" class="search-meme__input" oninput="searchKeyWord(this.value)" placeholder="Write meme key word"/>
-                        <i class="fa fa-times-circle-o search-meme__submit" aria-hidden="true" onclick="cleanSearchKeyWord()"></i>
+                        <input type="text" class="search-meme__input-keyword" oninput="searchKeyWord(this.value)" placeholder="Write meme key word" />
+                        <i class="fa fa-times-circle-o search-meme__clean" aria-hidden="true" onclick="cleanInput('keyword')"></i>
                         <i class="fa fa-search search-meme__submit" aria-hidden="true" onclick="searchKeyWord()"></i>
                     </div>
                 </div>
                 <!-- Popular Keyboards / Change class name? -->
                 <div class="search-keywords flex flex-wrap space-between">
                 </div>
-                <!--<div class="search-meme__url flex flex-col">
-                    <h3>Search for meme by url</h3>
-                    <input type="text" class="search-meme__url-input" oninput="showGenerator(this.value)" />
-                    <input type="submit" onclick="return false;" />
-                </div>-->
+                <div class="search-meme__url flex flex-col">
+                    <h3>Search for Meme by img URL</h3>
+                    <!--<input type="submit" onclick="return false;" />-->
+                    <div class="flex space-between">
+                        <input type="text" class="search-meme__input-url" placeholder="Download not working." />
+                        <i class="fa fa-times-circle-o search-meme__clean" aria-hidden="true" onclick="cleanInput('url')"></i>
+                        <i class="fa fa-search search-meme__submit" aria-hidden="true" onclick="getMemeURL()"></i>
+                    </div>
+                </div>
                 <div class="memes-display">
                     <i class="fa fa-list-ul" aria-hidden="true" onclick="toggleMemesList()"></i>&nbsp;
                 </div>
@@ -287,13 +291,16 @@
                 <div class="contact-form flex flex-col">
                     <form class="contact-form__form">
                         <ul class="clean-list">
-                            <li><input type="text" placeholder="Name (Required)" class="contact-form__field" id="form-name"></li>
-                            <li><input type="email" placeholder="Email (Required)" class="contact-form__field" id="form-email"></li>
-                            <li><input type="text" placeholder="Subject" class="contact-form__field" id="form-subject"></li>
+                            <li><input type="text" placeholder="Name (Required)" class="contact-form__field" id="form-name" required></li>
+                            <li><input type="email" placeholder="Email (Required)" class="contact-form__field" id="form-email" required></li>
+                            <li><input type="text" placeholder="Subject" class="contact-form__field" id="form-subject" required></li>
                             <li><textarea rows="8" placeholder="Write your message here..." class="contact-form__field" id="form-txt"></textarea></li>
                         </ul>
                         <div class="contact-form__send flex flex-col">
-                            <input type="submit" class="contact-form__button" onclick="saveContactLocalStorage(); return false;">
+                            <div class="flex space-between">
+                                <input type="Reset" class="contact-form__button contact-form__reset" onclick="resetContactFormInputs(); return false;">
+                                <input type="Submit" class="contact-form__button contact-form__submit" onclick="saveContactLocalStorage(); return false;">
+                            </div>
                             <div class="contact-form__sent" style="display:none">Your input was sent successfully!</div>
                         </div>
                     </form>

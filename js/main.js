@@ -82,7 +82,7 @@ function saveContactLocalStorage() {
     };
     var contactToSave = JSON.stringify(contactForm);
     localStorage.setItem('Contact Info', contactToSave);
-    $('.contact-form__sent').show();
+    $('.contact-form__sent').show('slow');
 }
 
 /**
@@ -93,3 +93,12 @@ function calcKeyWordSize(keyWordSearchCount) {
     return fontSize > MAX_FONTSIZE ? MAX_FONTSIZE : fontSize;
 }
 
+/**
+ * Shows generator with the meme from the given URL
+ */
+function getMemeURL(){
+    var memeURL = $('.search-meme__url-input').val();
+    // Check input is not empty and editor is not on the same img
+    if(memeURL !== '' && memeURL !== gState.currMemeUrl) showGenerator(memeURL);
+    else return;
+}

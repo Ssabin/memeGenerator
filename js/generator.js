@@ -6,7 +6,6 @@
 function writeTextOnMeme() {
     gState.labels['top'].text = gElTopTextBox ? gElTopTextBox.value : '';
     gState.labels['bottom'].text = gElBottomTextBox ? gElBottomTextBox.value : '';
-    // ctx.clearRect(0, 0, 568, 360);
     drawOnCanvas();
 }
 

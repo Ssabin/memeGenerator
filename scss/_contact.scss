@@ -61,7 +61,16 @@
     cursor: pointer;
 }
 
+.contact-form__reset{
+    margin-right: em(10px);
+}
+
 .contact-form__send {
     align-items: flex-end;
     margin-bottom: em(10px);
+}
+
+.contact-form__sent{
+    color: #2eb398;
+    margin-top: em(15px);
 }

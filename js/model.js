@@ -46,16 +46,16 @@ var gKeyWordsPopularity;
  * Sets gKeyWordsPopularity with init values
  */
 function saveKeywordsLocalStorageFirstTime() {
-    gKeyWordsPopularity = {
-        'happy': 0,
-        'funny': 0,
-        'inspiring': 0,
-        'smart': 0,
-        'cheering': 0,
-        'sad': 0,
-        'dramatic': 0,
-        'stupid': 0,
-        'history': 0
+    gKeyWordsPopularity = { //Not init with 0's so you can see the beauty
+        'happy': 15,
+        'funny': 12,
+        'inspiring': 5,
+        'smart': 1,
+        'cheering': 6,
+        'sad': 7,
+        'dramatic': 1,
+        'stupid': 1,
+        'history': 10
     }
     var keyWordsString = JSON.stringify(gKeyWordsPopularity);
     localStorage.setItem('keyWordsPopularity', keyWordsString);

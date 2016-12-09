@@ -113,13 +113,22 @@ function showDropDown(dropDownLocation) {
 }
 
 /**
- * Clean search input
+ * Clean Search keyword/URL input
  */
-function cleanSearchKeyWord(){
-    var $searchInput = $('.search-meme__input');
-    //When input is empty no need to continue
+function cleanInput(inputSearchType){
+    var $searchInput = $('.search-meme__input-'+ inputSearchType +'');
     if($searchInput.val() === '') return;
-    
+    if($searchInput.hasClass('search-meme__input-keyword')) renderMemes(gMemes);
     $searchInput.val('');
-    renderMemes(gMemes);
+}
+
+/**
+ * Cleans contact form inputs
+ */
+
+function resetContactFormInputs(){
+    var $contactFormInputs = $('.contact-form__form ul'); 
+    $contactFormInputs.find('input').val('');
+    $contactFormInputs.find('textarea').val('');
+    $('.contact-form__sent').hide('slow');
 }
