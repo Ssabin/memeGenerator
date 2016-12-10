@@ -19,22 +19,22 @@ function initCanvas() {
  * Draw the img and execute 2 functions which draw texts on the canvas
  */
 function drawOnCanvas() {
-    // ctx.clearRect(0, 0, 568, 360);
     var img = new Image();
     img.src = gState.currMemeUrl;
-    img.onload = function() {
+    img.onload = function () {
         ctx.drawImage(img, 0, 0, 568, 360);
-        drawTopTextOnCanvas(ctx , gState.labels['top']);
-        drawTopTextOnCanvas(ctx , gState.labels['bottom']);
+        drawTextOnCanvas(ctx, gState.labels['top']);
+        drawTextOnCanvas(ctx, gState.labels['bottom']);
+        drawCopyRights();
     };
 }
 
 /**
  * Draws text with props set in his state 
  */
-function drawTopTextOnCanvas(ctx , textState) {
+function drawTextOnCanvas(ctx, textState) {
     //font size    
-    ctx.font = textState.textFontSize + 'px "'+ textState.fontFamily +'"';
+    ctx.font = textState.textFontSize + 'px "' + textState.fontFamily + '"';
     //font color    
     ctx.fillStyle = textState.textColor;
     //text alignment
@@ -47,5 +47,19 @@ function drawTopTextOnCanvas(ctx , textState) {
         ctx.shadowBlur = 10;
     }
     ctx.fillText(textState.text, textState.x, textState.y);
+    ctx.shadowBlur = 0;
+}
+
+/**
+ * Draws copyrights on canvas
+ */
+function drawCopyRights(){
+     //font size    
+    ctx.font = '12px "Lato"';
+    //font color    
+    //text alignment
+    ctx.textAlign = 'left';
+    ctx.fillStyle = 'white';
+    ctx.fillText('Created by Sahar and Itai Meme Generator' , 340 , 355);
     ctx.shadowBlur = 0;
 }

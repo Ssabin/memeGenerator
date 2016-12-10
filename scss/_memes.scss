@@ -139,3 +139,9 @@
 .memes-gallery__keywords {
     margin-left: em(5px);
 }
+
+.search-area > *{
+    &:not(:last-child){
+        margin-right: 10px;
+    }
+}

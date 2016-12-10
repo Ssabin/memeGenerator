@@ -35,7 +35,7 @@ function setAnchorsAnimations() {
  * Eevery time user types it will show him memes under this keyword
  */
 function searchKeyWord(keyWord) {
-    if(!keyWord) keyWord = $('.search-meme__input').val();
+    if(!keyWord) keyWord = $('.search-meme__input-keyword').val();
     if(keyWord === ''){
         renderMemes(gMemes);
         return;

@@ -49,7 +49,7 @@
             <div id="memes-search" class="search-meme__container flex flex-col align-center">
                 <div class="search-meme flex flex-col">
                     <h3>Search for Meme by keyword</h3>
-                    <div class="flex space-between">
+                    <div class="search-area flex space-between">
                         <input type="text" class="search-meme__input-keyword" oninput="searchKeyWord(this.value)" placeholder="Write meme key word" />
                         <i class="fa fa-times-circle-o search-meme__clean" aria-hidden="true" onclick="cleanInput('keyword')"></i>
                         <i class="fa fa-search search-meme__submit" aria-hidden="true" onclick="searchKeyWord()"></i>
@@ -61,7 +61,7 @@
                 <div class="search-meme__url flex flex-col">
                     <h3>Search for Meme by img URL</h3>
                     <!--<input type="submit" onclick="return false;" />-->
-                    <div class="flex space-between">
+                    <div class="search-area flex space-between">
                         <input type="text" class="search-meme__input-url" placeholder="Download not working." />
                         <i class="fa fa-times-circle-o search-meme__clean" aria-hidden="true" onclick="cleanInput('url')"></i>
                         <i class="fa fa-search search-meme__submit" aria-hidden="true" onclick="getMemeURL()"></i>

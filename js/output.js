@@ -75,7 +75,7 @@ function renderKeyWords() {
         $keyWordDiv.text(keyWord);
         $keyWordDiv.addClass('search-keywords__keyword ' + keyWord);
         $keyWordDiv.on('click', function (e) {
-            $('.search-meme__input').val(e.currentTarget.innerText);
+            $('.search-meme__input-keyword').val(e.currentTarget.innerText);
             selectKeyWord(e.currentTarget.innerText);
         });
         $searchKeyWords.append($keyWordDiv);
