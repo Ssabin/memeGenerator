@@ -13,41 +13,48 @@
         <header class="header__fixed">
             <!-- Header Navigation -->
             <nav class="main-nav flex justify-center full-height">
-                <ul class="clean-list main-nav__items flex align-center full-height">
-                    <li class="main-nav__item">
-                        <a href="#memes-search" class="main-nav__link" data-translate>
+                <input type="checkbox" id="main-nav__mobile-checkbox">
+                <label for="main-nav__mobile-checkbox" class="main-nav__mobile-icon">
+                    <img src="assets/imgs/logo.png" alt="">                    
+                </label>
+                <div class="main-nav__inner">
+                    <ul class="clean-list main-nav__items flex align-center full-height">
+                        <li class="main-nav__item">
+                            <a href="#memes-search" class="main-nav__link" data-translate>
                             Search
                     </a>
-                    </li>
-                    <li class="main-nav__item">
-                        <a href="#memes-gallery" class="main-nav__link" data-translate>
+                        </li>
+                        <li class="main-nav__item">
+                            <a href="#memes-gallery" class="main-nav__link" data-translate>
                             Memes
                         </a>
-                    </li>
-                    <li class="main-nav__item">
-                        <a href="#section-down" class="arrow-section__down">
-                            <img src="assets/imgs/logo.png" alt="">
-                        </a>
-                    </li>
-                    <li class="main-nav__item">
-                        <a href="#about" class="main-nav__link" data-translate>
+                        </li>
+                        <li class="main-nav__item main-nav__logo">
+                            <a href="#" class="arrow-section__down">
+                                <img src="assets/imgs/logo.png" alt="">
+                            </a>
+                        </li>
+                        <li class="main-nav__item">
+                            <a href="#about" class="main-nav__link" data-translate>
                             About
                         </a>
-                    </li>
-                    <li class="main-nav__item">
-                        <a href="#contact" class="main-nav__link" data-translate>
+                        </li>
+                        <li class="main-nav__item">
+                            <a href="#contact" class="main-nav__link" data-translate>
                             Contact
                         </a>
-                    </li>
-                </ul>
-                <span class="language-selcet">
+                        </li>
+                    </ul>
+                    <span class="language-selcet">
                     <a href="?lang=he" data-translate>Hebrew</a> / <a href="?" data-translate>English</a>
                     </span>
+                </div>
             </nav>
             <div class="arrow-down"></div>
         </header>
         <!-- Meme container -->
         <main class="memes-gallery__container flex flex-col align-center">
+            <h1 class="title">Meme Generator</h1>
             <!-- Meme Search -->
             <div id="memes-search" class="search-meme__container flex flex-col align-center">
                 <div class="search-meme flex flex-col">
@@ -82,7 +89,7 @@
                     <!--hexagon try-->
                     <ul id="categories" class="memes-gallery__grid">
                     </ul>
-                    <div class="memes-gallery__list">
+                    <div class="memes-gallery__list" style="display: none">
                     </div>
                 </div>
                 <!--Hexogan template-->

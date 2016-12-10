@@ -9,13 +9,13 @@ const HEADER_SIZE = 83;
  */
 function init() {
     renderMemes(gMemes);
-    pageLang();
     gKeyWordsPopularity = JSON.parse(localStorage.getItem('keyWordsPopularity'));
     if (!gKeyWordsPopularity) saveKeywordsLocalStorageFirstTime();
     renderKeyWords();
     initCanvas();
     setAnchorsAnimations();
     resetState();
+    pageLang();    
 }
 
 /**

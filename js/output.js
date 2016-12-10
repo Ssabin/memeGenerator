@@ -6,7 +6,7 @@
 
 function renderMemes(memes) {
     var $memesGallery__list = $('.memes-gallery__list'); //catch list container
-    $memesGallery__list.toggle(); //hide list
+    // $memesGallery__list.toggle(); //hide list
     var $memesGallery__grid = $('.memes-gallery__grid'); //catach grid container
     
     var $memesGalleryTemplate = $('.memes-gallery__meme-template'); //catch template container
@@ -33,7 +33,12 @@ function renderMemes(memes) {
             showGenerator(meme.url);
         });
         $memesGallery__list.append($listClone);
-        $listClone.find('.memes-gallery__keywords').text('Keywords: ' + meme.keywords);        
+        var strHTML = 'Keywords: <ul class="clean-list flex flex-col">';
+        meme.keywords.forEach(function(keyWord){
+            strHTML += '<li>' + keyWord + '</li>';
+        });
+        strHTML += '</ul>';
+        $listClone.find('.memes-gallery__keywords').html(strHTML);
     });
 }
 

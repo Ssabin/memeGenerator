@@ -1,5 +1,5 @@
 .memes-gallery__container{
-    margin-top: em(40px);
+    margin-top: em(80px);
 }
 
 .memes-gallery__meme-list{
@@ -98,7 +98,7 @@
 
 // Memes search
 .search-meme__container{
-    margin: em(60px) 0;
+    margin: em(20px) 0;
     @include from-tablet-only {
         flex-direction: row;
         align-items: center;
@@ -107,6 +107,7 @@
     }
 }
 .search-meme__container > *{
+    margin-bottom: em(10px);
     @include from-mobile-only {    
         &:not(:first-child){
             margin-left: em(50px);
