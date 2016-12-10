@@ -10,6 +10,7 @@
 }
 
 .memes-gallery__grid li{
+  cursor: pointer;
   position:relative;
   list-style-type:none;
   float:left;

@@ -15,6 +15,7 @@
 
 .developer-pic {
     margin: em(70px) 0;
+    cursor: default;
     @include from-mobile-only{
         margin-right: em(10px);
     };

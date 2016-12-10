@@ -97,7 +97,7 @@ function calcKeyWordSize(keyWordSearchCount) {
  * Shows generator with the meme from the given URL
  */
 function getMemeURL(){
-    var memeURL = $('.search-meme__url-input').val();
+    var memeURL = $('.search-meme__input-url').val();
     // Check input is not empty and editor is not on the same img
     if(memeURL !== '' && memeURL !== gState.currMemeUrl) showGenerator(memeURL);
     else return;

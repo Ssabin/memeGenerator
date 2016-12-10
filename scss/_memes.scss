@@ -7,13 +7,6 @@
 }
 
 .memes-gallery {
-    // border: 2px solid #e4e9eb;
-//    @include from-mobile-only {
-//     display: flex;
-//     flex-direction: row;
-//     flex-wrap: wrap;
-//     justify-content: space-between;
-//   }
 }
 
 .memes-gallery__list{
@@ -105,7 +98,7 @@
 // Memes search
 .search-meme__container{
     margin: em(60px) 0;
-    @include from-mobile-only {
+    @include from-tablet-only {
         flex-direction: row;
         align-items: center;
         justify-content: center;
