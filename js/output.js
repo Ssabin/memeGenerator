@@ -5,18 +5,35 @@
  */
 
 function renderMemes(memes) {
-    var $memesGallery__memes = $('.memes-gallery');
-    var $memesGalleryTemplate = $('.memes-gallery__meme-template');
-    $memesGallery__memes.empty();
-    var $template = $('.memes-gallery__meme-template').find('.memes-gallery__meme');
+    var $memesGallery__list = $('.memes-gallery__list'); //catch list container
+    $memesGallery__list.toggle(); //hide list
+    var $memesGallery__grid = $('.memes-gallery__grid'); //catach grid container
+    
+    var $memesGalleryTemplate = $('.memes-gallery__meme-template'); //catch template container
+    //empty both memes containers
+    $memesGallery__grid.empty(); 
+    $memesGallery__list.empty();
+    
+    var $gridTemplate = $('.memes-gallery__meme-template').find('li'); //grid hexagon template
+    var $listTemplate = $('.memes-gallery__meme-template').find('.memes-gallery__meme-list'); //list hexa template
+
     memes.forEach(function (meme) {
-        var $clone = $template.clone();
-        $clone.find('.hexagon').css('background-image', 'url(assets/imgs/memes/' + meme.id + '.jpg)');
-        $clone.on('click', function () {
+        //clone and set grid layout
+        var $gridClone = $gridTemplate.clone();
+        $gridClone.find('img').attr('src','assets/imgs/memes/' + meme.id + '.jpg');
+        $gridClone.on('click', function () {
             showGenerator(meme.url);
         });
-        $memesGallery__memes.append($clone);
-        $clone.find('.memes-gallery__keywords').text('Keywords: ' + meme.keywords);
+        $memesGallery__grid.append($gridClone);
+        
+        //clone and set list layout
+        var $listClone = $listTemplate.clone();
+        $listClone.find('.hexagon').css('background-image', 'url(assets/imgs/memes/' + meme.id + '.jpg)');
+        $listClone.on('click', function () {
+            showGenerator(meme.url);
+        });
+        $memesGallery__list.append($listClone);
+        $listClone.find('.memes-gallery__keywords').text('Keywords: ' + meme.keywords);        
     });
 }
 
@@ -24,10 +41,9 @@ function renderMemes(memes) {
  * Toggles display modes: list and grid. also changes the button
  */
 
-function toggleMemesList() {
-    $('.memes-gallery__keywords').toggle('slow');
-    $('.memes-gallery').toggleClass('memes-gallery__list');
-    $('.memes-gallery__meme').toggleClass('memes-gallery__meme-list');
+function toggleMemesLayout() {
+    $('.memes-gallery__grid').toggle('slow');
+    $('.memes-gallery__list').toggle('slow');
     var $iconDisplay = $('.memes-display').find('i');
     if($iconDisplay.hasClass('fa-list-ul')) {
         $iconDisplay.removeClass('fa-list-ul');

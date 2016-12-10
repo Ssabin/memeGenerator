@@ -50,7 +50,8 @@
                 <div class="search-meme flex flex-col">
                     <h3>Search for Meme by keyword</h3>
                     <div class="search-area flex space-between">
-                        <input type="text" class="search-meme__input-keyword" oninput="searchKeyWord(this.value)" placeholder="Write meme key word" />
+                        <input type="text" class="search-meme__input-keyword" oninput="searchKeyWord(this.value)" placeholder="Write meme key word"
+                        />
                         <i class="fa fa-times-circle-o search-meme__clean" aria-hidden="true" onclick="cleanInput('keyword')"></i>
                         <i class="fa fa-search search-meme__submit" aria-hidden="true" onclick="searchKeyWord()"></i>
                     </div>
@@ -68,24 +69,37 @@
                     </div>
                 </div>
                 <div class="memes-display">
-                    <i class="fa fa-list-ul" aria-hidden="true" onclick="toggleMemesList()"></i>&nbsp;
+                    <i class="fa fa-list-ul" aria-hidden="true" onclick="toggleMemesLayout()"></i>&nbsp;
                 </div>
             </div>
+
             <div class="inner-container flex flex-col flex-wrap align-center">
                 <!-- Meme Hexogan preview -->
                 <div id="memes-gallery" class="memes-gallery">
+                    <!--hexagon try-->
+                    <ul id="categories" class="memes-gallery__grid">
+                    </ul>
+                    <div class="memes-gallery__list">
+                    </div>
                 </div>
                 <!--Hexogan template-->
                 <div class="memes-gallery__meme-template" style="display: none;">
-                    <div class="memes-gallery__meme">
+                    <div class="memes-gallery__meme-list">
                         <div class="hexagon">
                             <div class="face1"></div>
                             <div class="face2"></div>
                         </div>
-                        <div class="memes-gallery__keywords" style="display: none;"></div>
+                        <div class="memes-gallery__keywords" style=""></div>
                     </div>
+                    <li>
+                        <div class="memes-gallery__hexameme">
+                            <img src="" alt="meme" />
+                        </div>
+                    </li>
                 </div>
             </div>
+
+
             <!-- Meme Generator -->
             <div class="meme-generator flex-col flex space-between" style="display: none;">
                 <!-- Back to preview -->
@@ -292,7 +306,8 @@
                     <form class="contact-form__form">
                         <ul class="clean-list">
                             <li><input type="text" placeholder="Name (Required)" class="contact-form__field" id="form-name" required></li>
-                            <li><input type="email" placeholder="Email (Required)" class="contact-form__field" id="form-email" required></li>
+                            <li><input type="email" placeholder="Email (Required)" class="contact-form__field" id="form-email"
+                                    required></li>
                             <li><input type="text" placeholder="Subject" class="contact-form__field" id="form-subject" required></li>
                             <li><textarea rows="8" placeholder="Write your message here..." class="contact-form__field" id="form-txt"></textarea></li>
                         </ul>

@@ -2,20 +2,18 @@
     margin-top: em(40px);
 }
 
-.memes-gallery__meme{
-    margin-bottom: em(130px);
-    margin-left: em(5px);
-    margin-right: em(5px);
+.memes-gallery__meme-list{
+    margin: em(70px) em(5px) em(120px) em(5px);
 }
 
 .memes-gallery {
-    border: 2px solid #e4e9eb;
-   @include from-mobile-only {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
+    // border: 2px solid #e4e9eb;
+//    @include from-mobile-only {
+//     display: flex;
+//     flex-direction: row;
+//     flex-wrap: wrap;
+//     justify-content: space-between;
+//   }
 }
 
 .memes-gallery__list{
