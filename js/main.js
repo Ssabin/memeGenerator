@@ -9,6 +9,7 @@ const HEADER_SIZE = 83;
  */
 function init() {
     renderMemes(gMemes);
+    pageLang();
     gKeyWordsPopularity = JSON.parse(localStorage.getItem('keyWordsPopularity'));
     if (!gKeyWordsPopularity) saveKeywordsLocalStorageFirstTime();
     renderKeyWords();
@@ -35,8 +36,8 @@ function setAnchorsAnimations() {
  * Eevery time user types it will show him memes under this keyword
  */
 function searchKeyWord(keyWord) {
-    if(!keyWord) keyWord = $('.search-meme__input-keyword').val();
-    if(keyWord === ''){
+    if (!keyWord) keyWord = $('.search-meme__input-keyword').val();
+    if (keyWord === '') {
         renderMemes(gMemes);
         return;
     }
@@ -46,9 +47,9 @@ function searchKeyWord(keyWord) {
         });
     });
     renderMemes(memes);
-    if(memes.length > 0){
+    if (memes.length > 0) {
         saveKeyWordsLocalStorage(keyWord);
-        setKeyWordFontSize(gKeyWordsPopularity[keyWord] , keyWord);
+        setKeyWordFontSize(gKeyWordsPopularity[keyWord], keyWord);
     }
 }
 
@@ -89,16 +90,16 @@ function saveContactLocalStorage() {
  * Calc new Font size for keyword
  */
 function calcKeyWordSize(keyWordSearchCount) {
-    var fontSize =  keyWordSearchCount + BASIC_FONTSIZE;
+    var fontSize = keyWordSearchCount + BASIC_FONTSIZE;
     return fontSize > MAX_FONTSIZE ? MAX_FONTSIZE : fontSize;
 }
 
 /**
  * Shows generator with the meme from the given URL
  */
-function getMemeURL(){
+function getMemeURL() {
     var memeURL = $('.search-meme__input-url').val();
     // Check input is not empty and editor is not on the same img
-    if(memeURL !== '' && memeURL !== gState.currMemeUrl) showGenerator(memeURL);
+    if (memeURL !== '' && memeURL !== gState.currMemeUrl) showGenerator(memeURL);
     else return;
 }

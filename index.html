@@ -15,12 +15,12 @@
             <nav class="main-nav flex justify-center full-height">
                 <ul class="clean-list main-nav__items flex align-center full-height">
                     <li class="main-nav__item">
-                        <a href="#memes-search" class="main-nav__link">
+                        <a href="#memes-search" class="main-nav__link" data-translate>
                             Search
                     </a>
                     </li>
                     <li class="main-nav__item">
-                        <a href="#memes-gallery" class="main-nav__link">
+                        <a href="#memes-gallery" class="main-nav__link" data-translate>
                             Memes
                         </a>
                     </li>
@@ -30,16 +30,19 @@
                         </a>
                     </li>
                     <li class="main-nav__item">
-                        <a href="#about" class="main-nav__link">
+                        <a href="#about" class="main-nav__link" data-translate>
                             About
                         </a>
                     </li>
                     <li class="main-nav__item">
-                        <a href="#contact" class="main-nav__link">
+                        <a href="#contact" class="main-nav__link" data-translate>
                             Contact
                         </a>
                     </li>
                 </ul>
+                <span class="language-selcet">
+                    <a href="?lang=he" data-translate>Hebrew</a> / <a href="?" data-translate>English</a>
+                    </span>
             </nav>
             <div class="arrow-down"></div>
         </header>
@@ -48,7 +51,7 @@
             <!-- Meme Search -->
             <div id="memes-search" class="search-meme__container flex flex-col align-center">
                 <div class="search-meme flex flex-col">
-                    <h3>Search for Meme by keyword</h3>
+                    <h3 data-translate>Search for Meme by keyword</h3>
                     <div class="search-area flex space-between">
                         <input type="text" class="search-meme__input-keyword" oninput="searchKeyWord(this.value)" placeholder="Write meme key word"
                         />
@@ -60,7 +63,7 @@
                 <div class="search-keywords flex flex-wrap space-between">
                 </div>
                 <div class="search-meme__url flex flex-col">
-                    <h3>Search for Meme by img URL</h3>
+                    <h3 data-translate>Search for Meme by img URL</h3>
                     <!--<input type="submit" onclick="return false;" />-->
                     <div class="search-area flex space-between">
                         <input type="text" class="search-meme__input-url" placeholder="Download not working." />
@@ -110,7 +113,7 @@
                     <div class="meme-edit__form flex flex-col">
                         <!-- Top Text form -->
                         <div class="top-text__generator flex flex-col align-center">
-                            <label for="topText">Top Text</label>
+                            <label for="topText" data-translate>Top Text</label>
                             <input type="text" class="topText generator-text__input" id="topText" oninput="writeTextOnMeme()" />
 
                             <div class="top-text__generator-features flex">
@@ -162,7 +165,7 @@
                         </div>
                         <!-- Bottom Text form -->
                         <div class="bottom-text__generator flex flex-col align-center">
-                            <label for="bottomText">Bottom Text</label>
+                            <label for="bottomText" data-translate>Bottom Text</label>
                             <input type="text" class="bottomText generator-text__input" id="bottomText" oninput="writeTextOnMeme()" />
                             <div class="bottom-text__generator-features flex">
                                 <!-- Text Alignments -->
@@ -235,7 +238,7 @@
                         <div class="face2"></div>
                     </div>
                     <div class="developer-story">
-                        <div class="developer-name">
+                        <div class="developer-name" data-translate>
                             Sahar Sabin
                         </div>
                         <div class="developer-title">
@@ -267,7 +270,7 @@
                         <div class="face2"></div>
                     </div>
                     <div class="developer-story">
-                        <div class="developer-name">
+                        <div class="developer-name" data-translate>
                             Itai Kushmar
                         </div>
                         <div class="developer-title">
@@ -300,8 +303,8 @@
         <!-- Contact section -->
         <div id="contact" class="contact flex flex-col">
             <div class="inner-container flex flex-col">
-                <div class="contact-form__title">Get in Touch</div>
-                <div class="contact-form__subtitle">In order to get in touch use the contact form below:</div>
+                <div class="contact-form__title" data-translate>Get in Touch</div>
+                <div class="contact-form__subtitle" data-translate>In order to get in touch use the contact form below:</div>
                 <div class="contact-form flex flex-col">
                     <form class="contact-form__form">
                         <ul class="clean-list">
@@ -338,6 +341,7 @@
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
     <script src="js/utils.js"></script>
     <script src="js/model.js"></script>
+    <script src="assets/translate/translate.js"></script>
     <script src="js/output.js"></script>
     <script src="js/generator.js"></script>
     <script src="js/canvas.js"></script>

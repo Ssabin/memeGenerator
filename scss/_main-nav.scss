@@ -5,6 +5,13 @@
     box-shadow: 0 0.4375em 38px #e4e9eb;
 }
 
+.language-selcet{
+    position: absolute;
+    top: 40%;
+    left: 10px;
+    color: white;
+}
+
 .main-nav{
     background-color: #323232;
 }
@@ -22,7 +29,7 @@
 
 .main-nav__item .main-nav__link{
     color: #efefef;
-    font-size: rem(12px);
+    font-size: rem(16px);
     transition: all 0.5s ease;
     &:hover{
         color: #2eac93;
