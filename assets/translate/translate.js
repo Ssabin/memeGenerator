@@ -34,6 +34,7 @@ function getParamFromURL(name) {
     var url = window.location.href;
     var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)");
     var results = regex.exec(url);
+    if(!results) return;
     var paramVal = results[2];
     return paramVal;
 }

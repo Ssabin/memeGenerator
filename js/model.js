@@ -35,42 +35,42 @@ var gMemes = [
     },
     {
         id: 7,
-        url: '../assets/imgs/memes/7.jpg',
+        url: 'assets/imgs/memes/7.jpg',
         keywords: ['funny', 'happy' , 'mad' , 'movies']
     },
     {
         id: 8,
-        url: '../assets/imgs/memes/8.jpg',
+        url: 'assets/imgs/memes/8.jpg',
         keywords: ['funny', 'happy' , 'cheering']
     },
     {
         id: 9,
-        url: '../assets/imgs/memes/9.jpg',
+        url: 'assets/imgs/memes/9.jpg',
         keywords: ['dramatic', 'inspiring']
     },
     {
         id: 10,
-        url: '../assets/imgs/memes/10.jpg',
+        url: 'assets/imgs/memes/10.jpg',
         keywords: ['stupid', 'history']
     },
     {
         id: 11,
-        url: '../assets/imgs/memes/11.jpg',
+        url: 'assets/imgs/memes/11.jpg',
         keywords: ['inspiring', 'movies']
     },
     {
         id: 12,
-        url: '../assets/imgs/memes/12.jpg',
+        url: 'assets/imgs/memes/12.jpg',
         keywords: ['funny', 'inspiring']
     },
     {
         id: 13,
-        url: '../assets/imgs/memes/13.jpg',
+        url: 'assets/imgs/memes/13.jpg',
         keywords: ['history' , 'movies' , 'dramatic']
     },
     {
         id: 14,
-        url: '../assets/imgs/memes/14.jpg',
+        url: 'assets/imgs/memes/14.jpg',
         keywords: ['funny', 'cheering']
     },
 ];

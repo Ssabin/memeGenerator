@@ -60,12 +60,20 @@
                 <div class="search-meme flex flex-col">
                     <h3 data-translate>Search for Meme by keyword</h3>
                     <div class="search-area flex space-between">
-                        <input type="text" class="search-meme__input-keyword" oninput="searchKeyWord(this.value)" placeholder="Write meme key word"
-                        />
+                        <input type="text" class="search-meme__input-keyword" oninput="searchKeyWord(this.value);showAutoSearchComplete(this.value)"
+                            placeholder="Write meme key word" />
+                        <div id="keyword_DropDown" class="dropdown-content search-dropdown">
+                            <!--<a href="#" onclick="changeFontFamily(this , 'top'); return false;">Lato</a>
+                            <a href="#" onclick="changeFontFamily(this , 'top'); return false;">David</a>
+                            <a href="#" onclick="changeFontFamily(this , 'top'); return false;">Times New Roman</a>-->
+                        </div>
                         <i class="fa fa-times-circle-o search-meme__clean" aria-hidden="true" onclick="cleanInput('keyword')"></i>
                         <i class="fa fa-search search-meme__submit" aria-hidden="true" onclick="searchKeyWord()"></i>
                     </div>
                 </div>
+                <!--<button onclick="showDropDown('top')" class="dropbtn">
+                                                <i class="fa fa-font" aria-hidden="true"></i>
+                                            </button>-->
                 <!-- Popular Keyboards / Change class name? -->
                 <div class="search-keywords flex flex-wrap space-between">
                 </div>

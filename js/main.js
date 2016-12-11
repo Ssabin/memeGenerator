@@ -12,6 +12,7 @@ function init() {
     gKeyWordsPopularity = JSON.parse(localStorage.getItem('keyWordsPopularity'));
     if (!gKeyWordsPopularity) saveKeywordsLocalStorageFirstTime();
     renderKeyWords();
+    renderAutoSearchKeyWords();
     initCanvas();
     setAnchorsAnimations();
     resetState();

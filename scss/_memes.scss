@@ -133,8 +133,19 @@
     margin-left: em(5px);
 }
 
+.search-area{
+    position: relative;
+}
+
 .search-area > *{
     &:not(:last-child){
         margin-right: 10px;
     }
+}
+
+.search-dropdown{
+    position: absolute;
+    top: 24px;
+    z-index: 99999;
+    width: 100%;
 }
